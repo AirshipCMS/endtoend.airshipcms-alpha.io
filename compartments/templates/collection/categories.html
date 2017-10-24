@@ -1,0 +1,38 @@
+{{> zoo-subnav}}
+
+<section class="section">
+  <div class="container">
+    <p>Lists all categories in the &ldquo;{{title}}&rdquo; collection.</p>
+    <div class="columns">
+      {{#each categories}}
+        <a class="column is-one-third" href="categories/{{permalink}}">
+          <div class="notification {{#if ../has_products}}is-success{{else}}is-primary{{/if}}">
+            <h3>{{title}}</h3>
+          </div>
+        </a>
+      {{/each}}
+    </div>
+    <!-- <div class="notification is-light">
+      <p>To Do: Test multiple related collections &amp; product collections on a post, and no values set.</p>
+    </div> -->
+  </div>
+</section>
+
+<!-- <div class="airship-help-block section">
+  <div class="container">
+    <div class="notification is-light">
+      <style>
+        .notification li{
+          list-style-type: disc;
+          padding: 0 1rem;
+        }
+      </style>
+      {{{help}}}
+    </div>
+  </div>
+</div> -->
+
+<!-- content for title-block in layout -->
+{{#content_for 'title-block' }}
+  {{title}} Categories
+{{/content_for}}

@@ -1,0 +1,92 @@
+{{> zoo-subnav}}
+
+<section class="section">
+  <div class="container">
+    <div class="notification is-danger">
+      <h1>aerostat_collection.title (deprecated): <b>{{aerostat_collection.title}}</b></h1>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="is-size-4-mobile is-size-3-tablet">&ldquo;Related Stuffed Animals&rdquo; Products:</h2>
+    <p>Tests first related product collection on product.</p>
+    <div class="columns">
+      {{#each related_items.stuffed_related}}
+        <a class="column is-one-third" href="{{slug}}">
+          <div class="notification is-success">
+            <h3>{{permalink}}</h3>
+            <p>
+              {{#each categories}}
+                {{this.permalink}} /
+              {{/each}}
+            </p>
+            <p>
+              {{#each tags}}
+                {{this.name}}
+              {{/each}}
+            </p>
+          </div>
+        </a>
+      {{/each}}
+    </div>
+    <p>Tests second related product collection on a product.</p>
+    <div class="columns">
+      {{#each related_items.second_stuffed_related}}
+        <a class="column is-one-third" href="{{slug}}">
+          <div class="notification is-success">
+            <h3>{{permalink}}</h3>
+          </div>
+        </a>
+      {{/each}}
+    </div>
+
+    <h2 class="is-size-4-mobile is-size-3-tablet">&ldquo;Related Unstuffed Animals&rdquo; Posts:</h2>
+    <p>Tests first related collection on a product.</p>
+    <div class="columns">
+      {{#each related_items.unstuffed_related}}
+        <a class="column is-one-third" href="{{slug}}">
+          <div class="notification is-primary">
+            <h3>{{permalink}}</h3>
+          </div>
+        </a>
+      {{/each}}
+    </div>
+    <p>Tests second related collection on a product.</p>
+    <div class="columns">
+      {{#each related_items.second_unstuffed_related}}
+        <a class="column is-one-third" href="{{slug}}">
+          <div class="notification is-primary">
+            <h3>{{permalink}}</h3>
+          </div>
+        </a>
+      {{/each}}
+    </div>
+    <!-- {{#if aerostat_collection.has_products}}
+    {{else}}
+      <div class="notification is-danger">
+        <p>Rendering Error: No Related Items show on this Collection Post</p>
+      </div>
+    {{/if}} -->
+  </div>
+</section>
+
+<!-- <div class="airship-help-block section">
+  <div class="container">
+    <div class="notification is-light">
+      <style>
+        .notification li{
+          list-style-type: disc;
+          padding: 0 1rem;
+        }
+      </style>
+      {{{help}}}
+    </div>
+  </div>
+</div> -->
+
+<!-- content for title-block in layout -->
+{{#content_for 'title-block' }}
+  &ldquo;{{permalink}}&rdquo;
+{{/content_for}}

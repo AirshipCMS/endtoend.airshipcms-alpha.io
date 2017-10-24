@@ -1,0 +1,89 @@
+.section{
+  padding: 0 1.5rem;
+}
+
+.section.body-section{
+  padding: 3rem 1.5rem;
+}
+
+p{
+  margin-bottom: 1rem;
+}
+
+.notification.is-light{
+  margin-bottom: 1rem;
+}
+
+.notification p{
+  margin-bottom: 0.25rem;
+}
+
+.zoo-subnav{
+  margin: 1rem 0;
+}
+
+ul.tiny-empty-zoo li.tiny-empty-zoo a,
+ul.tiny-stuffed-animal-zoo li.tiny-stuffed-animal-zoo a{
+  color: hsl(48, 100%, 67%);
+}
+
+ul.product-collection-index li.product-collection-index a,
+ul.product-collection-categories li.product-collection-categories a,
+ul.product-collection-category li.product-collection-category a,
+ul.product-collection-show li.product-collection-show a{
+  color: hsl(141, 71%, 48%);
+}
+
+ul.collection-index li.collection-index a,
+ul.collection-categories li.collection-categories a,
+ul.collection-category li.collection-category a,
+ul.collection-show li.collection-show a{
+  color: hsl(171, 100%, 41%);
+}
+
+.hidden {
+	display: none;
+}
+
+form p{
+
+}
+
+form .field + .field{
+  margin-top: 1.5rem;
+}
+
+#form-error,
+#submission-message{
+  margin-bottom: 2rem;
+}
+
+.column > .notification{
+
+}
+
+
+@media screen and (min-width: 769px){
+  .columns{
+    flex-wrap: wrap;
+  }
+
+  a.column{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: stretch;
+  }
+
+  a.column .notification{
+    flex: 0 0 100%;
+  }
+}
+
+
+@media only screen and (min-width: 769px){
+
+form .notification{
+  /*margin-top: 2rem;*/
+}
+
+}

@@ -1,0 +1,30 @@
+<section class="hero is-primary is-bold is-medium">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="subtitle">Welcome to:</h2>
+      <h1 class="title">{{fields.header}}</h1>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="notification" style="margin-top:3rem">
+          <h1 class="subtitle">{{> rogue-partial}}</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- content for title-block in layout -->
+{{#content_for 'title-block' }}
+  {{fields.header}}
+{{/content_for}}
+
+<!-- content for title-block in partial -->
+{{#content_for 'title-block' }}
+  {{fields.header}}
+{{/content_for}}

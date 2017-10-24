@@ -1,0 +1,102 @@
+<style>
+
+p span{
+  display: inline-block;
+  width: 200px;
+}
+
+</style>
+
+<h1>Fifty Things A - #EACH</h1>
+
+<p>This correctly outputs in permalink order.</p>
+
+{{#each items}}
+  <p><span>{{fields.title}}</span> / {{format_date published_on "%B %d, %Y %l:%M%P" "us"}}</p>
+{{/each}}
+
+<br>
+<hr>
+<br>
+
+<h1>Fifty Things B - #SORT_LIST by PERMA ASC</h1>
+
+{{#sort_list items sort="permalink" order="asc"}}
+  <p><span>{{fields.title}}</span> / {{format_date published_on "%B %d, %Y %l:%M%P" "us"}}</p>
+{{/sort_list}}
+
+<br>
+<hr>
+<br>
+
+<h1>Fifty Things C - #SORT_LIST by PERMA DESC</h1>
+
+{{#sort_list items sort="permalink" order="desc"}}
+  <p><span>{{fields.title}}</span> / {{format_date published_on "%B %d, %Y %l:%M%P" "us"}}</p>
+{{/sort_list}}
+
+<br>
+<hr>
+<br>
+
+<h1>Fifty Things D - #SORT_LIST by published_on ASC</h1>
+
+{{#sort_list items sort="published_on" order="asc"}}
+  <p><span>{{fields.title}}</span> / {{format_date published_on "%B %d, %Y %l:%M%P" "us"}}</p>
+{{/sort_list}}
+
+<br>
+<hr>
+<br>
+
+<h1>Fifty Things E - #SORT_LIST by published_on DESC</h1>
+
+{{#sort_list items sort="published_on" order="desc"}}
+  <p><span>{{fields.title}}</span> / {{format_date published_on "%B %d, %Y %l:%M%P" "us"}}</p>
+  <p>Event Date: {{#if fields.date_2}}{{fields.date_1}} - {{fields.date_2}}{{else}}{{fields.date_1}}{{/if}}</p>
+  <a href="{{slug}}">click me</a>
+{{/sort_list}}
+
+<br>
+<hr>
+<br>
+
+<h1>Fifty Things F - #SORT_LIST by sorting_position ASC</h1>
+
+{{#sort_list items sort="sorting_position" order="asc"}}
+  <p><span>{{fields.title}}</span> / {{format_date published_on "%B %d, %Y %l:%M%P" "us"}} / {{sorting_position}}</p>
+{{/sort_list}}
+
+<br>
+<hr>
+<br>
+
+<h1>Fifty Things G - #SORT_LIST by sorting_position DESC</h1>
+
+{{#sort_list items sort="sorting_position" order="desc"}}
+  <p><span>{{fields.title}}</span> / {{format_date published_on "%B %d, %Y %l:%M%P" "us"}} / {{sorting_position}}</p>
+{{/sort_list}}
+
+<br>
+<hr>
+<br>
+
+<h1>Fifty Things H - #SORT_LIST by created_at ASC</h1>
+
+{{#sort_list items sort="created_at" order="asc"}}
+  <p><span>{{fields.title}}</span> / {{format_date published_on "%B %d, %Y %l:%M%P" "us"}}</p>
+{{/sort_list}}
+
+<br>
+<hr>
+<br>
+
+<h1>Fifty Things I - #SORT_LIST by created_at DESC</h1>
+
+{{#sort_list items sort="created_at" order="desc"}}
+  <p><span>{{fields.title}}</span> / {{format_date published_on "%B %d, %Y %l:%M%P" "us"}}</p>
+{{/sort_list}}
+
+<br>
+<hr>
+<br>

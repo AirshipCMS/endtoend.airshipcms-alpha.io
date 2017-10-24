@@ -1,0 +1,10 @@
+{{#each items}}
+<p><a href="{{slug}}">{{format_date fields.date_1}} - {{format_date fields.date_2}}</a></p>
+{{/each}}
+
+
+<hr>
+
+{{#sort_list items}}
+<p><a href="{{slug}}">{{format_date fields.date_1}} - {{format_date fields.date_2}}</a></p>
+{{/sort_list}}

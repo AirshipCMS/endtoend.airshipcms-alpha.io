@@ -1,0 +1,63 @@
+<div style="border: 0; color: #676767; font: inherit; font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', sans-serif; font-size: 13px; line-height: 20px; margin: 0; padding: 0; vertical-align: baseline;">
+
+
+
+<img src="https://user-images.githubusercontent.com/1865400/29244662-65b2a5bc-7f59-11e7-9c46-cc5d61d94ea3.jpg" alt="Take to the Secure Skies!" style="border: 0; display: block; font: inherit; font-size: 100%; margin: 0; padding: 0; vertical-align: baseline; width: 100%;">
+<div style="border: 0; font: inherit; font-size: 100%; margin: 0; padding: 10px 30px 40px; vertical-align: baseline;">
+  <h1 style="border: 0; color: #FC8B15; font: inherit; font-size: 28px; font-weight: 300; letter-spacing: 0; line-height: 36px; margin: 0; margin-bottom: 20px; margin-top: 10px; padding: 0; vertical-align: baseline;">Security updates are coming soon!</h1>
+      
+  <p style="border: 0; color: #67777B; font: inherit; font-size: 15px; font-weight: 400; line-height: 22px; margin: 0; padding: 0; vertical-align: baseline;">Hello Team Nakaz,</p>
+
+  <p style="border: 0; color: #67777B; font: inherit; font-size: 15px; font-weight: 400; line-height: 22px; margin: 0; margin-top: 1rem; padding: 0; vertical-align: baseline;">In about a week, we will be enabling "https://" for the domain associated with your Airship site! That means your domain "www.devleague.com" will be served as "https://www.devleague.com".</p>
+
+  <p style="border: 0; color: #67777B; font: inherit; font-size: 15px; font-weight: 400; line-height: 22px; margin: 0; margin-top: 1rem; padding: 0; vertical-align: baseline;">This is a Critical Update that requires us to receive your approval, before we proceed. Please carefully read the following.</p>
+
+  <h2 style="border: 0; color: #FC8B15; font: inherit; font-size: 20px; font-weight: 300; line-height: 30px; margin: 0; margin-bottom: 5px; margin-top: 1rem; padding: 0; vertical-align: baseline;">Check the https:// Airship version of your site:</h2>
+
+  <p style="border: 0; color: #67777B; font: inherit; font-size: 15px; font-weight: 400; line-height: 22px; margin: 0; padding: 0; vertical-align: baseline;">Please click through the entire "https://" version of your site with your browser console open to check that everything loads as expected.</p>
+
+  <p style="background-color: #FFFAB5; border: 0; color: #9E961E; font: inherit; font-size: 15px; font-weight: 400; line-height: 22px; margin: 0; margin-top: 1rem; padding: 20px; vertical-align: baseline;"><a href="https://devleague.airshipcms.io/" style="border: 0; color: #9E961E; font: inherit; font-size: 100%; font-weight: 400; margin: 0; padding: 0; text-decoration: none; vertical-align: baseline;">https://devleague.airshipcms.io/</a>
+  </p>
+
+  <h2 style="border: 0; color: #FC8B15; font: inherit; font-size: 20px; font-weight: 300; line-height: 30px; margin: 0; margin-bottom: 5px; margin-top: 1rem; padding: 0; vertical-align: baseline;">1. Check Resources Loaded over http://</h2>
+
+  <p style="border: 0; color: #67777B; font: inherit; font-size: 15px; font-weight: 400; line-height: 22px; margin: 0; padding: 0; vertical-align: baseline;">If you are loading any javascript with an "http://" protocol, your scripts will not load over "https://". Please update your code to load over "https://" or use <span style="background-color: #DAE9ED; border: 0; border-radius: 2px; font: inherit; font-family: 'Inconsolata', 'Courier Nueue', monospace; font-size: 1.1em; margin: 0; padding: 0 4px; vertical-align: baseline;">//</span> to allow either protocol (recommended).</p>
+
+  <h2 style="border: 0; color: #FC8B15; font: inherit; font-size: 20px; font-weight: 300; line-height: 30px; margin: 0; margin-bottom: 5px; margin-top: 1rem; padding: 0; vertical-align: baseline;">2. Check API Calls</h2>
+  <p style="border: 0; color: #67777B; font: inherit; font-size: 15px; font-weight: 400; line-height: 22px; margin: 0; padding: 0; vertical-align: baseline;">Check your scripts. Be sure to update "http://" Airship API calls to "https://" or use the relative path <span style="background-color: #DAE9ED; border: 0; border-radius: 2px; font: inherit; font-family: 'Inconsolata', 'Courier Nueue', monospace; font-size: 1.1em; margin: 0; padding: 0 4px; vertical-align: baseline;">/api/*</span> to use a relative protocol (recommended).</p>
+
+  <h2 style="border: 0; color: #FC8B15; font: inherit; font-size: 20px; font-weight: 300; line-height: 30px; margin: 0; margin-bottom: 5px; margin-top: 1rem; padding: 0; vertical-align: baseline;">3. Check Image &amp; List of Images Fields</h2>
+  <p style="border: 0; color: #67777B; font: inherit; font-size: 15px; font-weight: 400; line-height: 22px; margin: 0; padding: 0; vertical-align: baseline;">You may notice "Mixed Content" warnings for images with an "http://" url. If you are using propellers within Airship templates, you can ensure that secure versions of images are loaded by using <span style="background-color: #DAE9ED; border: 0; border-radius: 2px; font: inherit; font-family: 'Inconsolata', 'Courier Nueue', monospace; font-size: 1.1em; margin: 0; padding: 0 4px; vertical-align: baseline;">{{secure_url}}</span> instead of {{url}} wherever <b style="border: 0; font: inherit; font-size: 100%; font-weight: 700; margin: 0; padding: 0; vertical-align: baseline;">image</b> and <b style="border: 0; font: inherit; font-size: 100%; font-weight: 700; margin: 0; padding: 0; vertical-align: baseline;">list of images</b> fields are used.
+
+  </p><p style="background-color: #FFFAB5; border: 0; color: #9E961E; font: inherit; font-size: 15px; font-weight: 400; line-height: 22px; margin: 0; margin-top: 1rem; padding: 20px; vertical-align: baseline;">
+    On your site, I noticed that the only place where you use {{url}} is on the `/funding` page. You may want to update the reference.
+  </p>
+
+  <p style="border: 0; color: #67777B; font: inherit; font-size: 15px; font-weight: 400; line-height: 22px; margin: 0; margin-top: 1rem; padding: 0; vertical-align: baseline;">Image resources will still load with an "http://" url when "Mixed Content" warnings show in the console, so updating your templates and layouts to secure urls is highly recommended, though not required.</p>
+
+  <h2 style="border: 0; color: #FC8B15; font: inherit; font-size: 20px; font-weight: 300; line-height: 30px; margin: 0; margin-bottom: 5px; margin-top: 1rem; padding: 0; vertical-align: baseline;">4. Check hardcoded assets in Styles, Templates, &amp; Layouts</h2>
+  
+  <p style="border: 0; color: #67777B; font: inherit; font-size: 15px; font-weight: 400; line-height: 22px; margin: 0; padding: 0; vertical-align: baseline;">If you have any hard-coded image tags in your markup that are using absolute Cloudinary urls, update them to "https://" URLs. 
+
+  </p><h2 style="border: 0; color: #FC8B15; font: inherit; font-size: 20px; font-weight: 300; line-height: 30px; margin: 0; margin-bottom: 5px; margin-top: 1rem; padding: 0; vertical-align: baseline;">5. Check CMS Richtext &amp; Link, and List of Links Fields</h2>
+  <p style="border: 0; color: #67777B; font: inherit; font-size: 15px; font-weight: 400; line-height: 22px; margin: 0; padding: 0; vertical-align: baseline;">Be careful, there is no "secure_url" for Link  and List of Link fields. If you want to ensure that any Cloudinary resource URLs for link fields are https:// you must update the url in the CMS.</p>
+
+  <p style="background-color: #FFFAB5; border: 0; color: #9E961E; font: inherit; font-size: 15px; font-weight: 400; line-height: 22px; margin: 0; margin-top: 1rem; padding: 20px; vertical-align: baseline;">
+    I have manually checked the URLs on your site, and all published instances of http:// cloudinary URLs have already been updated to https://. Please also check once more, to ensure that no URLs have been missed.
+  </p>
+
+  <h2 style="border: 0; color: #FC8B15; font: inherit; font-size: 20px; font-weight: 300; line-height: 30px; margin: 0; margin-bottom: 5px; margin-top: 1rem; padding: 0; vertical-align: baseline;">Action Steps</h2>
+
+  <p style="border: 0; color: #67777B; font: inherit; font-size: 15px; font-weight: 400; line-height: 22px; margin: 0; padding: 0; vertical-align: baseline;">By <b style="border: 0; font: inherit; font-size: 100%; font-weight: 700; margin: 0; padding: 0; vertical-align: baseline;">Tuesday, Aug 15</b> please acknowledge that you have received this message.</p>
+
+  <p style="border: 0; color: #67777B; font: inherit; font-size: 15px; font-weight: 400; line-height: 22px; margin: 0; margin-top: 1rem; padding: 0; vertical-align: baseline;">By <b style="border: 0; font: inherit; font-size: 100%; font-weight: 700; margin: 0; padding: 0; vertical-align: baseline;">Friday, Aug 18</b> please update any critical/breaking code on your site. If you need more time to do so, please let me know ASAP.</p>
+
+  <p style="border: 0; color: #67777B; font: inherit; font-size: 15px; font-weight: 400; line-height: 22px; margin: 0; margin-top: 1rem; padding: 0; vertical-align: baseline;">This is a very unique Airship Update, so we will only launch the "https" improvement once we get your :thumbsup: that your site looks good to go.</p>
+
+  <p style="border: 0; color: #67777B; font: inherit; font-size: 15px; font-weight: 400; line-height: 22px; margin: 0; margin-top: 1rem; padding: 0; vertical-align: baseline;">Have a Great Day!<br>
+  Take to the <i style="border: 0; font: inherit; font-size: 100%; font-style: italic; margin: 0; padding: 0; vertical-align: baseline;">secure</i> skies!</p>
+
+  <p style="border: 0; color: #67777B; font: inherit; font-size: 15px; font-weight: 400; line-height: 22px; margin: 0; margin-top: 1rem; padding: 0; vertical-align: baseline;">Kelli</p>
+
+
+</div>

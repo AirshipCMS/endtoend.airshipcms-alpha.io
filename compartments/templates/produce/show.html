@@ -1,0 +1,33 @@
+<div>
+  <h1>{{product_title}}</h1>
+  <select id="variation_select" name="variation_select">
+    <option selected="" disabled="">Select</option>
+    {{#each product_variations}}
+      <option
+        value="{{product_variation_title}}"
+        data-aeroproduct-variation-title="{{product_variation_title}}"
+        data-aeroproduct-variation-id="{{id}}"
+        data-aeroproduct-price="{{#if on_sale}}{{sale_price.usd}}{{else}}{{price.usd}}{{/if}}"
+      >
+        {{product_variation_title}} - {{format_currency price "usd" "0"}}
+      </option>
+    {{/each}}
+  </select>
+  <div class="add-to-cfart-button-container">
+    <button
+      id="add_to_cart_select" 
+      class="button button-red button-add-to-cart add-to-cart" 
+      data-aeroproduct-title="{{product_title}}" 
+      data-aeroproduct-variation-title="" 
+      data-aeroproduct-variation-id="" 
+      data-aeroproduct-id="{{id}}" 
+      data-aeroproduct-price="" 
+      data-aeroproduct-quantity="1" 
+      data-aeroproduct-currency="usd">
+      <span>Add to Cart</span>
+    </button>
+  </div>
+</div>
+<script src="/assets/scripts/airship_add_to_cart_button.js"></script>
+<script src="/assets/scripts/aerocart_button.js"></script>
+<script src="/assets/scripts/variation_selection.js"></script>

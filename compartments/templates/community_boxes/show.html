@@ -5,20 +5,20 @@
 
   <div class="add-to-cart-button-container">
     <button
-      id="add_to_cart_list" 
+      id="add-to-cart-button" 
       class="button button-red button-add-to-cart add-to-cart add-to-cart-button add-sub-button"
-      data-aeroproduct-title="{{product_plan.name}}"
-      data-aeroproduct-variation-title="{{product_plan.name}}"
-      type="plan"
-      data-aeroproduct-variation-id="{{product_plan.id}}"
-      data-aeroproduct-id="{{id}}"
-      data-aeroproduct-price="{{product_plan.amount}}"
-      data-aeroproduct-quantity="1"
-      data-aeroproduct-currency="usd">
+      data-product-title="{{fields.title}}"
+      data-type="plan"
+      data-aerostat-id="{{id}}"
+      data-amount="{{product_plan.stripe_data.amount}}"
+      data-name="{{product_plan.name}}"
+      data-id="{{product_plan.id}}"
+      data-interval={{product_plan.stripe_data.interval}}
+      >
       <span>Add to Cart</span>
     </button>
   </div>
 </div>
-<script src="/assets/scripts/airship_add_to_cart_button.js"></script>
+<script src="/assets/scripts/addToCartButton.bundle.js"></script>
 <script src="/assets/scripts/aerocart_button.js"></script>
 <script src="/assets/scripts/variation_selection.js"></script>

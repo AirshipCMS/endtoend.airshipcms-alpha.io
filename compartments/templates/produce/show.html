@@ -1,6 +1,7 @@
 <div>
   <h1>{{product_title}}</h1>
-  <select id="variation_select" name="variation_select">
+  <!-- Example 1 -->
+  <!-- <select id="variation_select" name="variation_select">
     <option selected="" disabled="">Select</option>
     {{#each product_variations}}
       <option
@@ -12,8 +13,41 @@
         {{product_variation_title}} - {{format_currency price "usd" "0"}}
       </option>
     {{/each}}
-  </select>
-  <div class="add-to-cfart-button-container">
+  </select> -->
+
+  <!-- Example 2 -->
+  <!-- <ul id="variations-list">
+    {{#each product_variations}}
+      <li
+        class="variation"
+        value="{{product_variation_title}}"
+        data-product-variation-title="{{product_variation_title}}"
+        data-id="{{id}}"
+        data-price="{{price.usd}}"
+      >
+        {{product_variation_title}} - {{format_currency price "usd" "0"}}
+      </li>
+    {{/each}}
+  </ul> -->
+
+  <!-- Example 3 -->
+  {{#each product_variations}}
+    <h4>{{product_variation_title}} - {{format_currency price "usd" "0"}}</h4>
+    <button
+      class="button button-red button-add-to-cart add-to-cart" 
+      data-product-title="{{../product_title}}" 
+      data-aerostat-id="{{../id}}" 
+      data-quantity="1" 
+      data-product-variation-title="{{product_variation_title}}"
+      data-id="{{id}}"
+      data-price="{{price.usd}}"
+    >
+      <span>Add to Cart</span>
+    </button>
+  {{/each}}
+
+  <!-- Add to Cart Button: use for Example 1 and Example 2 -->
+<!--   <div class="add-to-cfart-button-container">
     <button
       id="add-to-cart-button" 
       class="button button-red button-add-to-cart add-to-cart" 
@@ -23,7 +57,7 @@
       data-currency="usd">
       <span>Add to Cart</span>
     </button>
-  </div>
+  </div> -->
 </div>
 <script src="/assets/scripts/addToCartButton.bundle.js"></script>
 <script src="/assets/scripts/variation_selection.js"></script>

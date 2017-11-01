@@ -2,7 +2,7 @@
 
   var selector = document.getElementById('variation_select');
   var variationList = document.getElementsByClassName('variation');
-  var addToCartButton = document.querySelectorAll('[data-aerostat-id');
+  var addToCartButton = document.querySelectorAll('button[data-aerostat-id');
 
   // Example 1: Select dropdown
   function setSelectData( index ){
@@ -32,7 +32,7 @@
 
   // Add to Cart Button
   Array.prototype.slice.call(addToCartButton).forEach(function(el) {
-    el.onclick = addedToCart;
+    el.addEventListener('click', addedToCart)
   });
 
   function addedToCart() {

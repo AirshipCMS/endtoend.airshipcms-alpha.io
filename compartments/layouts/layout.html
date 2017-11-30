@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <title>{{#block 'title-block'}} Airship CMS {{/block}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- BULMA CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.0/css/bulma.min.css">
-    <link rel="stylesheet" href="/assets/styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
+    
+    <!-- AIRSHIP CSS -->
     <link rel="stylesheet" type="text/css" href="/assets/styles/navLoginStatus.css">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="/assets/scripts/navbar.js"></script>
+
+    <link rel="stylesheet" href="/assets/styles/styles.css">
+
   </head>
   <body>
     <nav class="navbar ">
@@ -27,12 +32,21 @@
 
       <div id="navMenu" class="navbar-menu">
         <div class="navbar-end">
-         <!--  <a class="navbar-item" href="/">
+          <a class="navbar-item" href="/">
             Home
           </a>
           <a class="navbar-item" href="/tiny-stuffed-animal-zoo">
-            Tiny Zoo Experiments
-          </a> -->
+            Collections
+          </a>
+          <a class="navbar-item" href="/produce">
+            Products
+          </a>
+          <a class="navbar-item" href="/community-boxes">
+            Subscriptions
+          </a>
+          <a class="navbar-item" href="/cart">
+            Cart
+          </a>
 
           <!-- <div class="navbar-item has-dropdown is-hoverable is-right">
             <a class="navbar-link  is-active" href="/blog">
@@ -47,15 +61,19 @@
               <a class="navbar-item" href="/blog/categories/news">News</a>
             </div>
           </div> -->
-          <li class='nav-cart'>
-            <a class="cart-summary aerocart_button" href="/cart"></a>
-            <span class="airshop-status-container">
-              <span style="opacity:0;" class="airshop-status"></span>
-            </span>
-          </li>
+          <div class='navbar-item'>
+            <div class="nav-cart">
+              <a class="cart-summary aerocart_button" href="/cart"></a>
+              <span class="airshop-status-container">
+                <span style="opacity:0;" class="airshop-status"></span>
+              </span>
+            </div>
+          </div>
+          <div class="navbar-item">
+            <div id="nav-login-status"></div>
+          </div>
         </div>
       </div>
-      <div id="nav-login-status"></div>
     </nav>
 
     {{{ template }}}

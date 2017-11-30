@@ -10,10 +10,11 @@
       data-product-title="{{fields.title}}"
       data-type="plan"
       data-aerostat-id="{{id}}"
-      data-amount="{{product_plan.stripe_data.amount}}"
       data-name="{{product_plan.name}}"
       data-id="{{product_plan.id}}"
       data-interval={{product_plan.stripe_data.interval}}
+      data-price="{{product_plan.stripe_data.amount}}"
+      data-has-no-shipments="{{fields.has_no_shipments}}"
       >
       <span>Add to Cart</span>
     </button>

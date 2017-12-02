@@ -26,14 +26,19 @@ var NavLoginStatus = function () {
       this.signInButtonEl.href = "/signin";
       this.signInButtonEl.className = "nav-login-status-signin";
 
+      this.dropDownContainer = document.createElement("div");
+      this.userEmailEl = document.createElement("span");
       this.dropDownEl = document.createElement("ul");
-      this.userEmailEl = document.createElement("li");
       var logoutEl = document.createElement("li");
 
-      this.element.appendChild(this.dropDownEl);
-      this.dropDownEl.appendChild(this.userEmailEl);
+      this.element.appendChild(this.dropDownContainer);
+      this.dropDownContainer.appendChild(this.userEmailEl);
+      this.dropDownContainer.appendChild(this.dropDownEl);
       this.dropDownEl.appendChild(logoutEl);
-      this.dropDownEl.className = "nav-login-status-dropdown hidden";
+
+      this.dropDownEl.className = "nav-login-status-dropdown";
+      this.dropDownContainer.className = "nav-login-status-logged-in login-status-hidden";
+      this.userEmailEl.className = "nav-login-status-username";
 
       logoutEl.innerHTML = "Logout";
       logoutEl.className = "nav-login-status-logout";
@@ -53,8 +58,9 @@ var NavLoginStatus = function () {
   }, {
     key: "toggleElements",
     value: function toggleElements() {
-      this.signInButtonEl.classList.toggle("hidden");
-      this.dropDownEl.classList.toggle("hidden");
+      this.signInButtonEl.classList.toggle("login-status-hidden");
+      this.signInButtonEl.classList.toggle("nav-login-status-signin");
+      this.dropDownContainer.classList.toggle("login-status-hidden");
     }
   }, {
     key: "getProfile",

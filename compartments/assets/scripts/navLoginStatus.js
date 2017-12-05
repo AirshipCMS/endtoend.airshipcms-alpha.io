@@ -1,13 +1,5 @@
-"use strict";
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var NavLoginStatus = function () {
-  function NavLoginStatus(domain) {
-    _classCallCheck(this, NavLoginStatus);
-
+class NavLoginStatus {
+  constructor(domain) {
     this.id_token = localStorage.getItem("id_token");
     this.element = document.getElementById("nav-login-status");
     this.domain = domain;
@@ -15,97 +7,84 @@ var NavLoginStatus = function () {
     this.checkContainer();
   }
 
-  _createClass(NavLoginStatus, [{
-    key: "render",
-    value: function render() {
-      var _this = this;
+  render() {
+    this.signInButtonEl = document.createElement("a");
+    this.element.appendChild(this.signInButtonEl);
+    this.signInButtonEl.innerHTML = "Sign In";
+    this.signInButtonEl.href = "/signin";
+    this.signInButtonEl.className = "nav-login-status-signin";
 
-      this.signInButtonEl = document.createElement("a");
-      this.element.appendChild(this.signInButtonEl);
-      this.signInButtonEl.innerHTML = "Sign In";
-      this.signInButtonEl.href = "/signin";
-      this.signInButtonEl.className = "nav-login-status-signin";
+    this.dropDownContainer = document.createElement("div");
+    this.userEmailEl = document.createElement("span");
+    this.dropDownEl = document.createElement("ul");
+    let logoutEl = document.createElement("li");
 
-      this.dropDownContainer = document.createElement("div");
-      this.userEmailEl = document.createElement("span");
-      this.dropDownEl = document.createElement("ul");
-      var logoutEl = document.createElement("li");
+    this.element.appendChild(this.dropDownContainer);
+    this.dropDownContainer.appendChild(this.userEmailEl);
+    this.dropDownContainer.appendChild(this.dropDownEl);
+    this.dropDownEl.appendChild(logoutEl);
 
-      this.element.appendChild(this.dropDownContainer);
-      this.dropDownContainer.appendChild(this.userEmailEl);
-      this.dropDownContainer.appendChild(this.dropDownEl);
-      this.dropDownEl.appendChild(logoutEl);
+    this.dropDownEl.className = "nav-login-status-dropdown login-status-hidden";
+    this.dropDownContainer.className = "nav-login-status-logged-in login-status-hidden";
+    this.userEmailEl.className = "nav-login-status-username";
+    this.userEmailEl.addEventListener("click", () => this.toggleDropdown());
 
-      this.dropDownEl.className = "nav-login-status-dropdown";
-      this.dropDownContainer.className = "nav-login-status-logged-in login-status-hidden";
-      this.userEmailEl.className = "nav-login-status-username";
+    logoutEl.innerHTML = "Logout";
+    logoutEl.className = "nav-login-status-logout";
+    logoutEl.addEventListener("click", () => this.logout());
 
-      logoutEl.innerHTML = "Logout";
-      logoutEl.className = "nav-login-status-logout";
-      logoutEl.addEventListener("click", function () {
-        return _this.logout();
+    if (this.id_token !== null) {
+      this.getProfile((err, xhr) => {
+        if (xhr.status === 200) {
+          this.userEmailEl.innerHTML = JSON.parse(xhr.response).email;
+          this.toggleStatus();
+        }
       });
+    }
+  }
 
-      if (this.id_token !== null) {
-        this.getProfile(function (err, xhr) {
-          if (xhr.status === 200) {
-            _this.userEmailEl.innerHTML = JSON.parse(xhr.response).email;
-            _this.toggleElements();
-          }
-        });
-      }
-    }
-  }, {
-    key: "toggleElements",
-    value: function toggleElements() {
-      this.signInButtonEl.classList.toggle("login-status-hidden");
-      this.signInButtonEl.classList.toggle("nav-login-status-signin");
-      this.dropDownContainer.classList.toggle("login-status-hidden");
-    }
-  }, {
-    key: "getProfile",
-    value: function getProfile(done) {
-      var xhr = new XMLHttpRequest();
-      xhr.open("GET", "https://" + this.domain + "/api/users/profile");
-      xhr.setRequestHeader("Authorization", "bearer " + this.id_token);
-      xhr.onload = function () {
-        return done(null, xhr);
-      };
-      xhr.onerror = function () {
-        return done(xhr.xhr);
-      };
-      xhr.send();
-    }
-  }, {
-    key: "logout",
-    value: function logout() {
-      localStorage.clear();
-      this.toggleElements();
-    }
-  }, {
-    key: "isValidDomain",
-    value: function isValidDomain(domain) {
-      var valid = false;
-      var substring = ".airshipcms.io";
-      var substring2 = ".airshipcms-alpha.io";
-      if (domain.includes(substring) || domain.includes(substring2)) {
-        valid = true;
-      }
-      return valid;
-    }
-  }, {
-    key: "checkContainer",
-    value: function checkContainer() {
-      if (this.domain === undefined || !this.isValidDomain(this.domain)) {
-        throw new Error("valid airship domain required");
-      }
-      if (this.element === null) {
-        throw new Error("Nav Login Status container not found");
-      } else {
-        this.render();
-      }
-    }
-  }]);
+  toggleDropdown() {
+    this.dropDownEl.classList.toggle("login-status-hidden");
+  }
 
-  return NavLoginStatus;
-}();
+  toggleStatus() {
+    this.signInButtonEl.classList.toggle("login-status-hidden");
+    this.signInButtonEl.classList.toggle("nav-login-status-signin");
+    this.dropDownContainer.classList.toggle("login-status-hidden");
+  }
+
+  getProfile(done) {
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", `https://${this.domain}/api/users/profile`);
+    xhr.setRequestHeader("Authorization", `bearer ${this.id_token}`);
+    xhr.onload = () => done(null, xhr);
+    xhr.onerror = () => done(xhr.xhr);
+    xhr.send();
+  }
+
+  logout() {
+    delete localStorage.id_token;
+    this.toggleStatus();
+  }
+
+  isValidDomain(domain) {
+    let valid = false;
+    let substring = ".airshipcms.io";
+    let substring2 = ".airshipcms-alpha.io";
+    if (domain.includes(substring) || domain.includes(substring2)) {
+      valid = true;
+    }
+    return valid;
+  }
+
+  checkContainer() {
+    if (this.domain === undefined || !this.isValidDomain(this.domain)) {
+      throw new Error("valid airship domain required");
+    }
+    if (this.element === null) {
+      throw new Error("Nav Login Status container not found");
+    } else {
+      this.render();
+    }
+  }
+}

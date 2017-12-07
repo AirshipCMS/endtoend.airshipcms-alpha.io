@@ -32,7 +32,11 @@
 
   <!-- Example 3 -->
   {{#each product_variations}}
-    <h4>{{product_variation_title}} - {{format_currency price "usd" "0"}}</h4>
+    {{#if on_sale}}
+      <h4>{{product_variation_title}} - {{format_currency sale_price "usd" "0"}}</h4>
+    {{else}}
+      <h4>{{product_variation_title}} - {{format_currency price "usd" "0"}}</h4>
+    {{/if}}
     <button
       class="button button-red button-add-to-cart add-to-cart" 
       data-product-title="{{../product_title}}" 
@@ -40,7 +44,7 @@
       data-quantity="1" 
       data-product-variation-title="{{product_variation_title}}"
       data-id="{{id}}"
-      data-price="{{price.usd}}"
+      data-price="{{#if on_sale}}{{sale_price.usd}}{{else}}{{price.usd}}{{/if}}"
     >
       <span>Add to Cart</span>
     </button>

@@ -30,7 +30,11 @@ function renderProducts(products) {
       selectEl.append(selectOption);
       selectOption.dataset.aerostatId = product.id;
       selectOption.dataset.productTitle = product.product_title;
-      selectOption.dataset.price = variation.price.usd;
+      if(variation.on_sale) {
+        selectOption.dataset.price = variation.sale_price.usd;
+      } else {
+        selectOption.dataset.price = variation.price.usd;
+      }
       selectOption.dataset.id = variation.id;
       selectOption.dataset.productVariationTitle = variation.product_variation_title;
       selectOption.dataset.qantity = 1;

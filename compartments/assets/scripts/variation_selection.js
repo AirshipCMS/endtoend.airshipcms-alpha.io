@@ -38,11 +38,8 @@
   function addedToCart() {
     var button = this;
     button.children[0].innerHTML = 'Added to Cart!';
-    var airshop_status = document.getElementsByClassName('airshop-status');
-    airshop_status[0].style.opacity = 1;
     setTimeout(function() {
       button.children[0].innerHTML = 'Add to Cart';
-      airshop_status[0].style.opacity = 0;
     },3000);
   };
 }());

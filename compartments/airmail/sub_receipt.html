@@ -26,18 +26,22 @@
       <p>stripe_data.plan {{stripe_data.plan}}</p>
       <p>stripe_data.plan.id {{stripe_data.plan.id}}</p> -->
 
-      <p style="border: 0; color: #67777B; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 17px; font-weight: 300; line-height: 25px; margin: 0; padding: 0; vertical-align: baseline;">subscriptions.plan_id {{subscriptions.plan_id}}</p>
-      <p style="border: 0; color: #67777B; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 17px; font-weight: 300; line-height: 25px; margin: 0; padding: 0; vertical-align: baseline;">subscriptions.stripe_data.id {{subscriptions.stripe_data.id}}</p>
-      <p style="border: 0; color: #67777B; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 17px; font-weight: 300; line-height: 25px; margin: 0; padding: 0; vertical-align: baseline;">subscriptions.stripe_data.plan {{subscriptions.stripe_data.plan}}</p>
-      <p style="border: 0; color: #67777B; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 17px; font-weight: 300; line-height: 25px; margin: 0; padding: 0; vertical-align: baseline;">subscriptions.stripe_data.plan.id {{subscriptions.stripe_data.plan.id}}</p>
+      <!-- <p>subscriptions.plan_id {{subscriptions.plan_id}}</p>
+      <p>subscriptions.stripe_data.id {{subscriptions.stripe_data.id}}</p>
+      <p>subscriptions.stripe_data.plan {{subscriptions.stripe_data.plan}}</p>
+      <p>subscriptions.stripe_data.plan.id {{subscriptions.stripe_data.plan.id}}</p> -->
       
-      <h3 style="border: 0; color: #8A9A9E; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 12px; margin: 0; margin-bottom: 5px; margin-top: 15px; padding: 0; vertical-align: baseline;">Each Subscriptions:</h3>
+      <!-- <h3>Each Subscriptions:</h3>
       {{#each subscriptions}}
-      <p style="border: 0; color: #67777B; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 17px; font-weight: 300; line-height: 25px; margin: 0; padding: 0; vertical-align: baseline;">stripe_data.id {{stripe_data.id}}</p>
-      <p style="border: 0; color: #67777B; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 17px; font-weight: 300; line-height: 25px; margin: 0; padding: 0; vertical-align: baseline;">stripe_data.plan {{stripe_data.plan}}</p>
-      <p style="border: 0; color: #67777B; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 17px; font-weight: 300; line-height: 25px; margin: 0; padding: 0; vertical-align: baseline;">stripe_data.plan.id {{stripe_data.plan.id}}</p>
-      {{/each}}
+      <p>stripe_data.id {{stripe_data.id}}</p>
+      <p>stripe_data.plan {{stripe_data.plan}}</p>
+      <p>stripe_data.plan.id {{stripe_data.plan.id}}</p>
+      {{/each}} -->
 
+      <p style="border: 0; color: #67777B; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 17px; font-weight: 300; line-height: 25px; margin: 0; padding: 0; vertical-align: baseline;">customer.id {{customer.id}}</p>
+      <p style="border: 0; color: #67777B; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 17px; font-weight: 300; line-height: 25px; margin: 0; padding: 0; vertical-align: baseline;">customer.stripe_data.id {{customer.stripe_data.id}}</p>
+
+      <p style="border: 0; color: #67777B; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 17px; font-weight: 300; line-height: 25px; margin: 0; padding: 0; vertical-align: baseline;">each subscriptions plan_id {{#each subscriptions}}{{plan_id}}{{/each}}</p>
 
       <!-- <p>This is how Sub_Created does it:</p>
       <p>Subscription Plan: <b>{{stripe_data.plan.name}} - {{stripe_data.plan.amount}} every {{stripe_data.plan.interval}}</b>

@@ -14,6 +14,7 @@
     <script src="/assets/scripts/navbar.js"></script>
 
     <link rel="stylesheet" href="/assets/styles/styles.css">
+    <link rel="stylesheet" type="text/css" href="/assets/styles/nav-cart-counter.css">
 
   </head>
   <body>
@@ -44,9 +45,7 @@
           <a class="navbar-item" href="/community-boxes">
             Subscriptions
           </a>
-          <a class="navbar-item" href="/cart">
-            Cart
-          </a>
+          <div id="nav-cart-counter"></div>
 
           <!-- <div class="navbar-item has-dropdown is-hoverable is-right">
             <a class="navbar-link  is-active" href="/blog">
@@ -61,14 +60,6 @@
               <a class="navbar-item" href="/blog/categories/news">News</a>
             </div>
           </div> -->
-          <div class='navbar-item'>
-            <div class="nav-cart">
-              <a class="cart-summary aerocart_button" href="/cart"></a>
-              <span class="airshop-status-container">
-                <span style="opacity:0;" class="airshop-status"></span>
-              </span>
-            </div>
-          </div>
           <div class="navbar-item">
             <div id="nav-login-status"></div>
           </div>
@@ -79,5 +70,6 @@
     {{{ template }}}
     <script src="/assets/scripts/navLoginStatus.js"></script>
     <script src="/assets/scripts/loginStatus.js"></script>
+    <script src="/assets/scripts/nav-cart-counter.min.js"></script>
   </body>
 </html>

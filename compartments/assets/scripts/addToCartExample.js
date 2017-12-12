@@ -1,6 +1,19 @@
 // this example pulls all products from a /api/product_collection/{{collection}} and renders each product in a SELECT dropdown with the appropriate Add to Cart Button data attributes
 var url = 'https://endtoend.airshipcms-alpha.io/api/product_collection/produce';
 var selectEl = document.getElementById('variation_select');
+var addToCartButton = document.querySelectorAll('button[data-aerostat-id');
+
+function setSelectData( index ){
+  var dataset = selectEl.children[ ( index || 0 ) ].dataset;
+  for(key in dataset) {
+    addToCartButton[0].dataset[ key ] = dataset[ key ];
+  }
+}
+if(selectEl) {
+  selectEl.addEventListener('change', function(event){
+    return setSelectData(this.selectedIndex);
+  });
+}
 
 function status(res) {
   if(res.ok) {

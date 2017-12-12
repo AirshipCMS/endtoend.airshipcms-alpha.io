@@ -1,4 +1,5 @@
 (function () {
+  // These examples can be found at /compartments/templates/produce/show.html and /compartments/templates/community_boxes/show.html
 
   var selector = document.getElementById('variation_select');
   var variationList = document.getElementsByClassName('variation');

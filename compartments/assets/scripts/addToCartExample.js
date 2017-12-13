@@ -2,6 +2,7 @@
 var url = 'https://endtoend.airshipcms-alpha.io/api/product_collection/produce';
 var selectEl = document.getElementById('variation_select');
 var addToCartButton = document.querySelectorAll('button[data-aerostat-id');
+var miscDataInput = document.getElementById('misc-data-example');
 
 function setSelectData( index ){
   var dataset = selectEl.children[ ( index || 0 ) ].dataset;
@@ -12,6 +13,14 @@ function setSelectData( index ){
 if(selectEl) {
   selectEl.addEventListener('change', function(event){
     return setSelectData(this.selectedIndex);
+  });
+}
+
+// Update Misc Data attribute
+miscDataInput.addEventListener('change', updateMiscData);
+function updateMiscData() {
+  Array.prototype.slice.call(addToCartButton).forEach(function(el) {
+    el.dataset.miscDataNotes = miscDataInput.value;
   });
 }
 

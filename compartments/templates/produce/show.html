@@ -30,6 +30,11 @@
     {{/each}}
   </ul> -->
 
+  <div>
+    <label for="misc-data-example">Check to have {{ product_title}} chopped</label>
+    <input id="misc-data-example" type="checkbox" name="chopped">
+  </div>
+
   <!-- Example 3 -->
   {{#each product_variations}}
     {{#if on_sale}}
@@ -44,6 +49,7 @@
       data-quantity="1" 
       data-product-variation-title="{{product_variation_title}}"
       data-id="{{id}}"
+      data-misc-data-chopped="false"
       data-price="{{#if on_sale}}{{sale_price.usd}}{{else}}{{price.usd}}{{/if}}"
     >
       <span>Add to Cart</span>

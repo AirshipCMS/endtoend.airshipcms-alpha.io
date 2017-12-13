@@ -3,6 +3,11 @@
 
   <p>${{format_currency product_plan.stripe_data "amount" "0"}} every {{product_plan.stripe_data.interval}}</p>
 
+  <div>
+    <label for="misc-data-example">Check to have items chopped</label>
+    <input id="misc-data-example" type="checkbox" name="chopped">
+  </div>
+
   <div class="add-to-cart-button-container">
     <button
       id="add-to-cart-button" 

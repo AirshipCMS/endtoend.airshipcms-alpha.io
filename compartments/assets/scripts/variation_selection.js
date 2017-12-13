@@ -4,6 +4,7 @@
   var selector = document.getElementById('variation_select');
   var variationList = document.getElementsByClassName('variation');
   var addToCartButton = document.querySelectorAll('button[data-aerostat-id');
+  var miscDataCheckbox = document.getElementById('misc-data-example');
 
   // Example 1: Select dropdown
   function setSelectData( index ){
@@ -29,6 +30,14 @@
     for(key in dataset) {
       addToCartButton[0].dataset[ key ] = dataset[ key ];
     }
+  }
+
+  // Update Misc Data attribute
+  miscDataCheckbox.addEventListener('click', toggleMiscDataValue);
+  function toggleMiscDataValue() {
+    Array.prototype.slice.call(addToCartButton).forEach(function(el) {
+      el.dataset.miscDataChopped = miscDataCheckbox.checked;
+    });
   }
 
   // Add to Cart Button

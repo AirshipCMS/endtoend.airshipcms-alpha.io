@@ -1,8 +1,11 @@
 <div>
   <ul>
     {{#each items}}
-      <li>
-        <a href="{{slug}}">{{fields.title}}</a>
+      <li style="border:1px solid #EEE; margin-bottom: 20px">
+        <h2><a href="{{slug}}">product_title_missing: <span style="color:red;">[ {{product_title}} ]</span></a></h2>
+        <ul>
+          <li>product_plan_data_missing: <span style="color:red;">[ ]</span></li>
+        </ul>
       </li>
     {{/each}}
   </ul> 

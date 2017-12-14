@@ -1,5 +1,6 @@
 <div> 
-  <h1>{{product_plan.name}}</h1>
+  <h1>product_title_missing: <span style="color:red;">[ {{product_title}} ]</span></h1>
+  <h2>{{product_plan.name}}</h2>
 
   <p>${{format_currency product_plan.stripe_data "amount" "0"}} every {{product_plan.stripe_data.interval}}</p>
 

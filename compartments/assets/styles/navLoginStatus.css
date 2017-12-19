@@ -3,39 +3,35 @@
 }
 
 #nav-login-status{
-  display: inline-block;
-  color: #ABABAB;
-  background-color: #fff;
-  border: 1px solid #BBBCBB;
   cursor: pointer;
-  text-align: right;
-  position: relative;
 }
 
-.nav-login-status-username,
-.nav-login-status-signin,
-.nav-login-status-logout{
-  display: inline-block;
-  padding: 0.5em;
-  margin: 0;
+@media only screen and (min-width: 1024px){
+  #nav-login-status{
+    position: relative;
+  }
 }
 
-#nav-login-status a{
-  color: #ABABAB;
-  text-decoration: none;
+@media only screen and (min-width: 1024px){
+  .nav-login-status-logout{
+    background-color: #FFFFFF;
+    text-align: right;
+    padding: .5rem 1rem;
+  }
 }
 
 .nav-login-status-dropdown{
-  margin: 0;
-  padding: 0;
-  display: none;
   list-style: none;
-  border: 1px solid #BBBCBB;
-  text-align: right;
-  position: absolute;
-  right: 0;
-  background-color: #fff;
+  margin: 0;
+  display: none;
   width: 100%;
+}
+
+@media only screen and (min-width: 1024px){
+  .nav-login-status-dropdown{
+    position: absolute;
+    right: 0;
+  }
 }
 
 .nav-login-status-logged-in:hover .nav-login-status-dropdown{

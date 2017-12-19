@@ -62,7 +62,6 @@ form .field + .field{
 
 }
 
-
 @media screen and (min-width: 769px){
   .columns{
     flex-wrap: wrap;
@@ -79,11 +78,8 @@ form .field + .field{
   }
 }
 
-
 @media only screen and (min-width: 769px){
-
-form .notification{
-  /*margin-top: 2rem;*/
-}
-
+  form .notification{
+    /*margin-top: 2rem;*/
+  }
 }

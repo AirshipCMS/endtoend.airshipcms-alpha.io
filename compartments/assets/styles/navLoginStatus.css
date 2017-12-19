@@ -1,29 +1,15 @@
-.login-status-hidden{
-  display: none;
-}
-
-#nav-login-status{
-  cursor: pointer;
-}
-
+/* LOGIN STATUS */
 @media only screen and (min-width: 1024px){
   #nav-login-status{
     position: relative;
   }
 }
 
-@media only screen and (min-width: 1024px){
-  .nav-login-status-logout{
-    background-color: #FFFFFF;
-    text-align: right;
-    padding: .5rem 1rem;
-  }
-}
-
+/* LOGIN STATUS DROPDOWN */
 .nav-login-status-dropdown{
   list-style: none;
   margin: 0;
-  display: none;
+  display: block;
   width: 100%;
 }
 
@@ -31,9 +17,27 @@
   .nav-login-status-dropdown{
     position: absolute;
     right: 0;
+    top: 52px; /* THEME */
   }
 }
 
 .nav-login-status-logged-in:hover .nav-login-status-dropdown{
   display: block;
+}
+
+/* HIDE LOGIN STATUS ITEMS */
+.login-status-hidden{
+  display: none;
+}
+
+.nav-login-status-dropdown.login-status-hidden,
+.nav-login-status-logged-in.login-status-hidden{
+  display: none;
+}
+
+@media only screen and (min-width: 1024px){
+  .nav-login-status-dropdown.login-status-hidden,
+  .nav-login-status-logged-in.login-status-hidden{
+    display: none;
+  }
 }

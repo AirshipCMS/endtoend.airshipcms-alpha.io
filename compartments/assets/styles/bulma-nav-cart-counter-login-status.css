@@ -58,7 +58,7 @@ not critical to nav functionality.
 .nav-login-status-signin:hover,
 .nav-login-status-logout:hover{
   background-color: #F5F5F5;
-  color: #3273dc;
+  color: #3273DC;
 }
 
 @media only screen and (min-width: 1024px){
@@ -66,4 +66,20 @@ not critical to nav functionality.
     display: flex;
     align-items: stretch;
   }
+}
+
+
+@media only screen and (min-width: 1024px){
+  .nav-cart-counter-notification,
+  .nav-login-status-dropdown{
+    top: 52px;
+  }
+}
+
+.nav-cart-counter-notification-text{
+  padding: 0.5rem;
+  background-color: #4A4A4A;
+  color: #F5F5F5;
+  font-size: 13px;
+  line-height: 16px;
 }

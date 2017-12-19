@@ -5,11 +5,6 @@
   }
 }
 
-.nav-cart-link{
-  color: #4A4A4A; /* THEME */
-  text-decoration: none;
-}
-
 .nav-cart-counter-notification{
   display: none;
 }
@@ -22,7 +17,7 @@
     height: auto;
     right: 0;
     z-index: 100;
-    top: 52px; /* THEME */
+    top: 24px; /* DEFAULT */
   }
 }
 
@@ -36,10 +31,4 @@
   display: block;
   min-width: 175px;
   max-width: 225px;
-
-  padding: 0.5rem; /* THEME */
-  background-color: #4A4A4A; /* THEME */
-  color: #F5F5F5; /* THEME */
-  font-size: 13px; /* THEME */
-  line-height: 16px; /* THEME */
 }

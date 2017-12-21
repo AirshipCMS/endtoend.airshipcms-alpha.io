@@ -1,1 +1,0 @@
-new NavLoginStatus('endtoend.airshipcms-alpha.io');

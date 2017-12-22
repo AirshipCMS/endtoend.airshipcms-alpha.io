@@ -22,6 +22,10 @@ p{
   margin: 1rem 0;
 }
 
+ul{
+  word-break: break-all;
+}
+
 ul.tiny-empty-zoo li.tiny-empty-zoo a,
 ul.tiny-stuffed-animal-zoo li.tiny-stuffed-animal-zoo a{
   color: hsl(48, 100%, 67%);

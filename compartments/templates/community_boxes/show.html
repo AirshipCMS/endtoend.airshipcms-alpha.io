@@ -1,54 +1,118 @@
-<div class="new-properties">
-  <!-- {{{help}}} -->
-  <p>site_properties.name: {{site_properties.name}}</p>
-</div>
+<section>
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="notification">
+          <h2 class="is-size-4-mobile is-size-3-tablet">{{product_title}}</h2>
+          <ul>
+              <li>product_plan.name: [{{product_plan.name}}]</li>
+              <li>product_plan.stripe_data.amount: [{{product_plan.stripe_data.amount}}]</li>
+              <li>product_plan.stripe_data.interval: [{{product_plan.stripe_data.interval}}]</li>
+              <li>product_plan.stripe_data.interval_count: [{{product_plan.stripe_data.interval_count}}]</li>
+              <!-- <li>product_plan.id: [{{product_plan.id}}]</li>
+              <li>product_plan.aerostat_id: [{{product_plan.aerostat_id}}]</li>
+              <li>product_plan.stripe_id: [{{stripe_id.id}}]</li>
+              <li>product_plan.stripe_data.id: [{{product_plan.stripe_data.id}}]</li>
+              <li>product_plan.stripe_data.object: [{{product_plan.stripe_data.object}}]</li>
+              <li>product_plan.stripe_data.created: [{{product_plan.stripe_data.created}}]</li>
+              <li>product_plan.stripe_data.currency: [{{product_plan.stripe_data.currency}}]</li>
+              <li>product_plan.stripe_data.livemode: [{{product_plan.stripe_data.livemode}}]</li>
+              <li>product_plan.stripe_data.metadata: [{{product_plan.stripe_data.metadata}}]</li>
+              <li>product_plan.stripe_data.name: [{{product_plan.stripe_data.name}}]</li>
+              <li>product_plan.stripe_data.statement_descriptor: [{{product_plan.stripe_data.statement_descriptor}}]</li>
+              <li>product_plan.stripe_data.trial_period_days: [{{product_plan.stripe_data.trial_period_days}}]</li>
+              <li>product_plan.created_at: [{{product_plan.created_at}}]</li>
+              <li>product_plan.updated_at: [{{product_plan.updated_at}}]</li> -->
+            </ul>
 
-<div> 
-  <h1>product_title_missing: <span style="color:red;">[ {{product_title}} ]</span></h1>
-  <ul>
-    <li>product_plan.id: [{{product_plan.id}}]</li>
-    <li>product_plan.aerostat_id: [{{product_plan.aerostat_id}}]</li>
-    <li>product_plan.stripe_id: [{{stripe_id.id}}]</li>
-    <li>product_plan.name: [{{product_plan.name}}]</li>
-    <li>product_plan.stripe_data.id: [{{product_plan.stripe_data.id}}]</li>
-    <li>product_plan.stripe_data.object: [{{product_plan.stripe_data.object}}]</li>
-    <li>product_plan.stripe_data.amount: [{{product_plan.stripe_data.amount}}]</li>
-    <li>product_plan.stripe_data.created: [{{product_plan.stripe_data.created}}]</li>
-    <li>product_plan.stripe_data.currency: [{{product_plan.stripe_data.currency}}]</li>
-    <li>product_plan.stripe_data.interval: [{{product_plan.stripe_data.interval}}]</li>
-    <li>product_plan.stripe_data.interval_count: [{{product_plan.stripe_data.interval_count}}]</li>
-    <li>product_plan.stripe_data.livemode: [{{product_plan.stripe_data.livemode}}]</li>
-    <li>product_plan.stripe_data.metadata: [{{product_plan.stripe_data.metadata}}]</li>
-    <li>product_plan.stripe_data.name: [{{product_plan.stripe_data.name}}]</li>
-    <li>product_plan.stripe_data.statement_descriptor: [{{product_plan.stripe_data.statement_descriptor}}]</li>
-    <li>product_plan.stripe_data.trial_period_days: [{{product_plan.stripe_data.trial_period_days}}]</li>
-    <li>product_plan.created_at: [{{product_plan.created_at}}]</li>
-    <li>product_plan.updated_at: [{{product_plan.updated_at}}]</li>
-  </ul>
+          <p>${{format_currency product_plan.stripe_data "amount" "0"}} every {{product_plan.stripe_data.interval}}</p>
 
-  <p>${{format_currency product_plan.stripe_data "amount" "0"}} every {{product_plan.stripe_data.interval}}</p>
+          <div>
+            <label for="misc-data-example">Check to have items chopped</label>
+            <input id="misc-data-example" type="checkbox" name="chopped">
+          </div>
 
-  <div>
-    <label for="misc-data-example">Check to have items chopped</label>
-    <input id="misc-data-example" type="checkbox" name="chopped">
+          <div class="add-to-cart-button-container">
+            <button
+              id="add-to-cart-button" 
+              class="button button-red button-add-to-cart add-to-cart add-to-cart-button add-sub-button"
+              data-product-title="{{fields.title}}"
+              data-type="plan"
+              data-aerostat-id="{{id}}"
+              data-name="{{product_plan.name}}"
+              data-id="{{product_plan.id}}"
+              data-interval={{product_plan.stripe_data.interval}}
+              data-price="{{product_plan.stripe_data.amount}}"
+              data-has-no-shipments="{{fields.has_no_shipments}}"
+              >
+              <span>Add to Cart</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+</section>
 
-  <div class="add-to-cart-button-container">
-    <button
-      id="add-to-cart-button" 
-      class="button button-red button-add-to-cart add-to-cart add-to-cart-button add-sub-button"
-      data-product-title="{{fields.title}}"
-      data-type="plan"
-      data-aerostat-id="{{id}}"
-      data-name="{{product_plan.name}}"
-      data-id="{{product_plan.id}}"
-      data-interval={{product_plan.stripe_data.interval}}
-      data-price="{{product_plan.stripe_data.amount}}"
-      data-has-no-shipments="{{fields.has_no_shipments}}"
-      >
-      <span>Add to Cart</span>
-    </button>
+<section>
+  <div class="container">
+    <h2 class="is-size-4-mobile is-size-3-tablet">&ldquo;Related Subscriptions&rdquo; Posts:</h2>
+    <div class="columns">
+      {{#each related_items.related_subscriptions}}
+        <a class="column is-one-third" href="{{slug}}">
+          <div class="notification is-primary">
+            <h3>product_title: {{product_title}}</h3>
+            <p>product_plan.stripe_data.amount: {{product_plan.stripe_data.amount}}</span></p>
+          </div>
+        </a>
+      {{/each}}
+    </div>
   </div>
-</div>
+</section>
+
+<section>
+  <div class="container">
+    <h2 class="is-size-4-mobile is-size-3-tablet">&ldquo;Related Subscriptions&rdquo; Posts:</h2>
+    <div class="columns">
+      {{#each related_items.related_subscriptions}}
+        <a class="column is-one-third" href="{{slug}}">
+          <div class="notification is-primary">
+            <h3>product_title: {{product_title}}</h3>
+            <p>product_plan.stripe_data.amount: {{product_plan.stripe_data.amount}}</span></p>
+          </div>
+        </a>
+      {{/each}}
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="notification" style="margin-top:2rem">
+          <div class="new-properties">
+            <p>site_properties.name: <b>{{site_properties.name}}</b></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section>
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="notification" style="margin-top:2rem">
+          <div class="new-properties">
+            {{{help}}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
 <script src="/assets/scripts/addToCartButton.bundle.js"></script>
 <script src="/assets/scripts/variation_selection.js"></script>

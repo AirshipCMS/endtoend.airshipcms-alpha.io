@@ -48,8 +48,10 @@
   function addedToCart() {
     var button = this;
     button.children[0].innerHTML = 'Added to Cart!';
+    button.disabled = true;
     setTimeout(function() {
       button.children[0].innerHTML = 'Add to Cart';
+      button.disabled = false;
     },3000);
   };
 }());

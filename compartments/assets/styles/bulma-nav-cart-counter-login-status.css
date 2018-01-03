@@ -16,23 +16,23 @@ not critical to nav functionality.
 }
 
 #nav-cart-counter,
-#nav-login-status{
+.airship-airship-nav-login-status{
   padding: 0;
   display: block;
   width: 100%;
 }
 
 @media only screen and (min-width: 1024px){
-  #nav-login-status,
+  #airship-nav-login-status,
   #nav-cart-counter{
     display: flex;
   }
 }
 
 .nav-cart-counter-count,
-.nav-login-status-username,
-.nav-login-status-signin,
-.nav-login-status-logout{
+.airship-nav-login-status-username,
+.airship-nav-login-status-signin,
+.airship-nav-login-status-logout{
   display: block;
   line-height: 1.5;
   padding: .5rem 1rem;
@@ -45,9 +45,9 @@ not critical to nav functionality.
 
 @media only screen and (min-width: 1024px){
   .nav-cart-counter-count,
-  .nav-login-status-username,
-  .nav-login-status-signin,
-  .nav-login-status-logout{
+  .airship-nav-login-status-username,
+  .airship-nav-login-status-signin,
+  .airship-nav-login-status-logout{
     display: flex;
     align-items: center;
     width: auto;
@@ -55,15 +55,15 @@ not critical to nav functionality.
 }
 
 .nav-cart-counter-count:hover,
-.nav-login-status-username:hover,
-.nav-login-status-signin:hover,
-.nav-login-status-logout:hover{
+.airship-nav-login-status-username:hover,
+.airship-nav-login-status-signin:hover,
+.airship-nav-login-status-logout:hover{
   background-color: #F5F5F5;
   color: #3273DC;
 }
 
 @media only screen and (min-width: 1024px){
-  .nav-login-status-logged-in{
+  .airship-nav-login-status-logged-in{
     display: flex;
     align-items: stretch;
   }
@@ -72,7 +72,7 @@ not critical to nav functionality.
 
 @media only screen and (min-width: 1024px){
   .nav-cart-counter-notification,
-  .nav-login-status-dropdown{
+  .airship-nav-login-status-dropdown{
     top: 52px;
   }
 }

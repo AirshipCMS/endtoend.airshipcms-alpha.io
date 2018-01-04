@@ -16,7 +16,7 @@ not critical to nav functionality.
 }
 
 .airship-nav-cart-counter,
-.airship-airship-nav-login-status{
+.airship-nav-login-status{
   padding: 0;
   display: block;
   width: 100%;
@@ -51,6 +51,7 @@ not critical to nav functionality.
     display: flex;
     align-items: center;
     width: auto;
+    height: 100%;
   }
 }
 
@@ -66,6 +67,7 @@ not critical to nav functionality.
   .airship-nav-login-status-logged-in{
     display: flex;
     align-items: stretch;
+    height: 100%;
   }
 }
 

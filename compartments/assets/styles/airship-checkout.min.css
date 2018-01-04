@@ -57,6 +57,10 @@
   flex-flow: row nowrap;
 }
 
-.hidden{
+.subscription-order-container{
+  margin-top: 20px;
+}
+
+.airship-hidden{
   display:none;
 }

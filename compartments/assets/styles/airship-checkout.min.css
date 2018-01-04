@@ -5,7 +5,7 @@
 .receipt-container .container-header,
 .checkout-container .container-header{
   background-color:#DDDDDD;
-  padding: 5px 20px;
+  padding: 3px 20px;
 }
 
 .receipt-container .container-header h4,
@@ -32,7 +32,7 @@
 @media only screen and (min-width: 1024px){
   .receipt-container .container-body-left,
   .checkout-container .container-body-left{
-    flex: 0 0 70%;
+    flex: 1 0 70%;
   }
 }
 
@@ -41,6 +41,11 @@
   flex: 0 0 100%;
   padding: 20px;
   background-color: #EEEEEE;
+}
+
+.receipt-container p,
+.checkout-container p{
+  font-size: 0.9em;
 }
 
 @media only screen and (min-width: 1024px){
@@ -55,6 +60,10 @@
 .checkout-container .cart-item {
   display: flex;
   flex-flow: row nowrap;
+}
+
+.payment-method-container{
+  margin-bottom: 20px;
 }
 
 .subscription-order-container{

@@ -21,6 +21,10 @@
   }
 }
 
+.nav-cart-count{
+  margin-left: 7px;
+}
+
 .nav-cart-counter-notification.nav-cart-counter-hidden{
   opacity: 0;
   height: 0;

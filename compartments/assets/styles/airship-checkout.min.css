@@ -56,10 +56,103 @@
   }
 }
 
+.receipt-container .cart-items p,
+.checkout-container .cart-items p{
+  margin: 0;
+}
+
 .receipt-container .cart-item,
-.checkout-container .cart-item {
+.checkout-container .cart-item,
+.receipt-container .cart-subtotal,
+.checkout-container .cart-subtotal,
+.receipt-container .cart-shipping,
+.checkout-container .cart-shipping,
+.receipt-container .cart-handling,
+.checkout-container .cart-handling,
+.receipt-container .cart-tax,
+.checkout-container .cart-tax,
+.receipt-container .cart-total,
+.checkout-container .cart-total{
+  /*background-color: orange;*/
   display: flex;
   flex-flow: row nowrap;
+}
+
+.receipt-container .cart-item,
+.checkout-container .cart-item,
+.receipt-container .cart-subtotal,
+.checkout-container .cart-subtotal,
+.receipt-container .cart-total,
+.checkout-container .cart-total{
+  border-top: 1px solid #DDDDDD;
+}
+
+.receipt-container .cart-item-description,
+.checkout-container .cart-item-description,
+.receipt-container .handling-title,
+.checkout-container .handling-title,
+.receipt-container .subtotal-title,
+.checkout-container .subtotal-title,
+.receipt-container .shipping-title,
+.checkout-container .shipping-title,
+.receipt-container .tax-title,
+.checkout-container .tax-title,
+.receipt-container .total-title,
+.checkout-container .total-title{
+  /*background-color: pink;*/
+  flex: 1 0 50%;
+}
+
+.receipt-container h4.product-title,
+.checkout-container h4.product-title{
+  /*color: green;*/
+}
+
+.receipt-container p.cart-item-variations,
+.checkout-container p.cart-item-variations,
+.receipt-container .cart-item-variation,
+.checkout-container .cart-item-variation{
+  /*background-color: powderblue;*/
+  /*color: blue;*/
+}
+
+.receipt-container .cart-item-quantity,
+.checkout-container .cart-item-quantity{
+  /*background-color: red;*/
+  /*color: pink;*/
+  flex: 1 0 10%;
+}
+
+.receipt-container p.cart-item-price,
+.checkout-container p.cart-item-price,
+.receipt-container p.cart-item-subtotal,
+.checkout-container p.cart-item-subtotal,
+.receipt-container p.cart-item-handling,
+.checkout-container p.cart-item-handling,
+.receipt-container p.cart-item-shipping,
+.checkout-container p.cart-item-shipping,
+.receipt-container p.cart-item-tax,
+.checkout-container p.cart-item-tax,
+.receipt-container p.cart-item-total,
+.checkout-container p.cart-item-total{
+  /*color: orange;*/
+}
+
+.receipt-container p.cart-item-price,
+.checkout-container p.cart-item-price,
+.receipt-container p.cart-item-subtotal,
+.checkout-container p.cart-item-subtotal,
+.receipt-container p.cart-item-handling,
+.checkout-container p.cart-item-handling,
+.receipt-container p.cart-item-shipping,
+.checkout-container p.cart-item-shipping,
+.receipt-container p.cart-item-tax,
+.checkout-container p.cart-item-tax,
+.receipt-container p.cart-item-total,
+.checkout-container p.cart-item-total{
+  /*background-color: purple;*/
+  flex: 1 0 20%;
+  text-align: right;
 }
 
 .payment-method-container{

@@ -90,7 +90,9 @@
 }
 
 .receipt-container .checkout-buttons,
-.checkout-container .checkout-buttons{
+.checkout-container .checkout-buttons,
+.receipt-container .continue-button,
+.checkout-container .continue-button{
   margin-top: 20px;
   margin-bottom: 60px;
 }
@@ -100,7 +102,18 @@
 .receipt-container h4.sidebar-header,
 .checkout-container h4.sidebar-header{
   font-size: 1em;
+  font-weight: 400;
   color: #888888;
+}
+
+.receipt-container label,
+.checkout-container label{
+  display: inline-block;
+}
+
+.receipt-container label + .control,
+.checkout-container label + .control{
+  display: inline-block;
 }
 
 .receipt-container p,

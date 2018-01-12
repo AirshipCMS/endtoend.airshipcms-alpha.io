@@ -4,26 +4,11 @@
       {{#each items}}
         <a href="{{slug}}" class="column is-one-third">
           <div class="notification is-success">
-            <h2>product_title: <span style="color:red;">[ {{product_title}} ]</span></h2>
+            <h2 class="is-size-4">Product Title: [{{product_title}}]</h2>
             <ul>
-              <li>product_plan.name: [{{product_plan.name}}]</li>
-              <li>product_plan.stripe_data.amount: [{{product_plan.stripe_data.amount}}]</li>
-              <li>product_plan.stripe_data.interval: [{{product_plan.stripe_data.interval}}]</li>
-              <li>product_plan.stripe_data.interval_count: [{{product_plan.stripe_data.interval_count}}]</li>
-              <!-- <li>product_plan.id: [{{product_plan.id}}]</li>
-              <li>product_plan.aerostat_id: [{{product_plan.aerostat_id}}]</li>
-              <li>product_plan.stripe_id: [{{stripe_id.id}}]</li>
-              <li>product_plan.stripe_data.id: [{{product_plan.stripe_data.id}}]</li>
-              <li>product_plan.stripe_data.object: [{{product_plan.stripe_data.object}}]</li>
-              <li>product_plan.stripe_data.created: [{{product_plan.stripe_data.created}}]</li>
-              <li>product_plan.stripe_data.currency: [{{product_plan.stripe_data.currency}}]</li>
-              <li>product_plan.stripe_data.livemode: [{{product_plan.stripe_data.livemode}}]</li>
-              <li>product_plan.stripe_data.metadata: [{{product_plan.stripe_data.metadata}}]</li>
-              <li>product_plan.stripe_data.name: [{{product_plan.stripe_data.name}}]</li>
-              <li>product_plan.stripe_data.statement_descriptor: [{{product_plan.stripe_data.statement_descriptor}}]</li>
-              <li>product_plan.stripe_data.trial_period_days: [{{product_plan.stripe_data.trial_period_days}}]</li>
-              <li>product_plan.created_at: [{{product_plan.created_at}}]</li>
-              <li>product_plan.updated_at: [{{product_plan.updated_at}}]</li> -->
+              <li>{{product_plan.name}}</li>
+              <li>{{product_plan.stripe_data.amount}}</li>
+              <li>Every {{product_plan.stripe_data.interval_count}} {{product_plan.stripe_data.interval}}s</li>
             </ul>
           </div>
         </a>

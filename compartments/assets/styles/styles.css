@@ -77,6 +77,10 @@ form .field + .field{
     align-items: stretch;
   }
 
+  a.column:hover > .notification{
+    opacity: 0.9;
+  }
+
   a.column .notification{
     flex: 0 0 100%;
   }

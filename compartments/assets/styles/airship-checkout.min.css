@@ -5,7 +5,7 @@
 .receipt-container .container-header,
 .checkout-container .container-header{
   background-color:#DDDDDD;
-  padding: 3px 20px;
+  padding: 6px 20px;
 }
 
 .receipt-container .container-header h4,
@@ -43,17 +43,66 @@
   background-color: #EEEEEE;
 }
 
-.receipt-container p,
-.checkout-container p{
-  font-size: 0.9em;
-}
-
 @media only screen and (min-width: 1024px){
   .receipt-container .container-body-right,
   .checkout-container .container-body-right{
     flex: 0 0 30%;
     border-left: 1px solid #DDDDDD;
   }
+}
+
+.receipt-container .inline-button,
+.checkout-container .inline-button{
+  font-size: 0.7em;
+  border-radius: 2px;
+  padding: 0 5px;
+  line-height: 0.9em;
+  margin-left: 5px;
+}
+
+.receipt-container .selected-shipping-address p,
+.receipt-container .misc-data-item p,
+.checkout-container .selected-shipping-address p,
+.checkout-container .misc-data-item p{
+  margin-bottom: 0;
+}
+
+.receipt-container .shipping-type-container,
+.receipt-container .billing-container,
+.receipt-container .order-notes-container,
+.receipt-container .misc-data-container,
+.receipt-container .misc-data-item + .misc-data-item,
+.receipt-container .cart-charge-details,
+.receipt-container .payment-method-container,
+.receipt-container .subscription-order-container
+.checkout-container .shipping-type-container,
+.checkout-container .billing-container,
+.checkout-container .order-notes-container,
+.checkout-container .misc-data-container,
+.checkout-container .misc-data-item + .misc-data-item,
+.checkout-container .cart-charge-details,
+.checkout-container .payment-method-container,
+.checkout-container .subscription-order-container{
+  margin-top: 1.5em;
+}
+
+.receipt-container .checkout-buttons,
+.checkout-container .checkout-buttons{
+  margin-top: 1em;
+  margin-bottom: 3em;
+}
+
+.receipt-container label,
+.checkout-container label,
+.receipt-container h4.sidebar-header,
+.checkout-container h4.sidebar-header{
+  font-size: 1em;
+  color: #888888;
+}
+
+.receipt-container p,
+.checkout-container p{
+  font-size: 1em;
 }
 
 .receipt-container .cart-items p,
@@ -73,7 +122,6 @@
 .checkout-container .cart-tax,
 .receipt-container .cart-total,
 .checkout-container .cart-total{
-  /*background-color: orange;*/
   display: flex;
   flex-flow: row nowrap;
 }
@@ -85,6 +133,8 @@
 .receipt-container .cart-total,
 .checkout-container .cart-total{
   border-top: 1px solid #DDDDDD;
+  margin-top: 0.5em;
+  padding-top: 0.5em;
 }
 
 .receipt-container .cart-item-description,
@@ -99,27 +149,23 @@
 .checkout-container .tax-title,
 .receipt-container .total-title,
 .checkout-container .total-title{
-  /*background-color: pink;*/
   flex: 1 0 50%;
 }
 
 .receipt-container h4.product-title,
 .checkout-container h4.product-title{
-  /*color: green;*/
+
 }
 
 .receipt-container p.cart-item-variations,
 .checkout-container p.cart-item-variations,
 .receipt-container .cart-item-variation,
 .checkout-container .cart-item-variation{
-  /*background-color: powderblue;*/
-  /*color: blue;*/
+
 }
 
 .receipt-container .cart-item-quantity,
 .checkout-container .cart-item-quantity{
-  /*background-color: red;*/
-  /*color: pink;*/
   flex: 1 0 10%;
 }
 
@@ -135,7 +181,6 @@
 .checkout-container p.cart-item-tax,
 .receipt-container p.cart-item-total,
 .checkout-container p.cart-item-total{
-  /*color: orange;*/
 }
 
 .receipt-container p.cart-item-price,
@@ -150,17 +195,8 @@
 .checkout-container p.cart-item-tax,
 .receipt-container p.cart-item-total,
 .checkout-container p.cart-item-total{
-  /*background-color: purple;*/
   flex: 1 0 20%;
   text-align: right;
-}
-
-.payment-method-container{
-  margin-bottom: 20px;
-}
-
-.subscription-order-container{
-  margin-top: 20px;
 }
 
 .airship-hidden{

@@ -12,8 +12,8 @@
 /* remove temp */
 .cart-items-wrapper,
 
-.single-payment-cart,
-.subscription-cart{
+.cart-container .single-payment-cart,
+.cart-container .subscription-cart{
   border:1px solid #DDDDDD ;
   margin-bottom: 20px;
 }
@@ -44,44 +44,48 @@
 
 }
 
-.cart-item-content{
+.cart-container .cart-item + .cart-item{
+  border-top: 1px solid #DDDDDD;
+}
+
+.cart-container .cart-item-content{
   position:relative;
   display:flex;
   flex-flow:row nowrap;
   padding: 20px;
 }
 
-.cart-item-content + .cart-item-content{
+.cart-container .cart-item-content + .cart-item-content{
   margin-top: 20px;
   border-top: 1px solid #DDDDDD;
 }
 
-.cart-item-content p{
+.cart-container .cart-item-content p{
   
 }
 
-.cart-item-details{
+.cart-container .cart-item-details{
   /*border: 3px solid red;*/
   flex:1 1 auto;
   /*padding-right: 20px;*/
 }
 
 @media only screen and (min-width: 600px){
-  .cart-item-details{
+  .cart-container .cart-item-details{
     display: flex;
     flex-flow: row nowrap;
   }
 }
 
-h4.amount,
-h4.amount.cart-subtotal-amount,
-h4.cart-item-price{
+.cart-container h4.amount,
+.cart-container h4.amount.cart-subtotal-amount,
+.cart-container h4.cart-item-price{
   flex: 0 0 150px;
   text-align: right;
 }
 
-h4.amount,
-h4.cart-item-price{
+.cart-container h4.amount,
+.cart-container h4.cart-item-price{
   /*background-color: yellow;*/
   display: flex;
   flex-flow: row nowrap;
@@ -90,56 +94,56 @@ h4.cart-item-price{
 }
 
 @media only screen and (min-width: 600px){
-  h4.amount,
-  h4.cart-item-price{
+  .cart-container h4.amount,
+  .cart-container h4.cart-item-price{
     padding-right: 20px;
   }
 }
 
-h4.amount.cart-subtotal-amount{
+.cart-container h4.amount.cart-subtotal-amount{
   padding-top: 20px;
   display:block;
   text-align:right;
   position: relative;
 }
 
-.cart-item-name{
+.cart-container .cart-item-name{
   /*border: 3px solid green;*/
 }
 
 @media only screen and (min-width: 600px){
-  .cart-item-name{
+  .cart-container .cart-item-name{
     flex: 1 1 50%;
   }
 }
 
-.cart-item-name h3,
-h4.cart-item-price{
+.cart-container .cart-item-name h3,
+.cart-container h4.cart-item-price{
   font-size: 16px;
   line-height: 20px;
   margin-bottom: 0;
 }
 
-.cart-item-name p{
+.cart-container .cart-item-name p{
   font-size: 15px;
   line-height: 19px;
   margin-bottom: 0;
 }
 
-.cart-item-quantity p{
+.cart-container .cart-item-quantity p{
   font-size: 15px;
   line-height: 19px;
   margin-bottom: 0;
 }
 
 
-.cart-item-quantity{
+.cart-container .cart-item-quantity{
   /*border: 3px solid orange;*/
   margin-top: 5px;
 }
 
 @media only screen and (min-width: 600px){
-  .cart-item-quantity{
+  .cart-container .cart-item-quantity{
     margin-top: 0;
     display: flex;
     flex-flow: row nowrap;
@@ -148,7 +152,7 @@ h4.cart-item-price{
   }
 }
 
-.cart-item-delete{
+.cart-container .cart-item-delete{
   /*background-color: pink;*/
   height: 20px;
   width: 20px;
@@ -164,13 +168,13 @@ h4.cart-item-price{
   line-height: 20px;
 }
 
-.cart-item-delete:hover{
+.cart-container .cart-item-delete:hover{
   cursor: pointer;
   color: #DC4F0B;
 }
 
 @media (min-width:531px){
-  .cart-item-delete{
+  .cart-container .cart-item-delete{
     position: initial;
     align-self: center;
     display:flex;
@@ -178,7 +182,7 @@ h4.cart-item-price{
   }
 }
 
-div.cart-subtotal-wrapper{
+.cart-container .cart-subtotal-wrapper{
   display:flex;
   flex-flow:row nowrap;
   padding-right: 20px;
@@ -186,36 +190,36 @@ div.cart-subtotal-wrapper{
 }
 
 @media (min-width:531px){
-  div.cart-subtotal-wrapper{
+  .cart-container .cart-subtotal-wrapper{
     padding-right: 40px;
   }
 }
 
-h3.cart-subtotal-label{
+.cart-container h3.cart-subtotal-label{
   padding: 20px;
   flex: 1 1 auto;
 }
 
-h3.cart-items-label{
+.cart-container h3.cart-items-label{
   padding: 20px;
   text-align: right;
   flex: 0 0 auto;
 }
 
-span.cart-subtotal-currency{
+.cart-container span.cart-subtotal-currency{
   font-size: 11px;
   line-height: 11px;
   display:block;
 }
 
 @media only screen and (min-width: 600px){
-  span.cart-subtotal-currency{
+  .cart-container span.cart-subtotal-currency{
     position: absolute;
     right: -8px;
     top: 28px;
   }
 }
 
-.cart-buttons{
+.cart-container .cart-buttons{
 
 }

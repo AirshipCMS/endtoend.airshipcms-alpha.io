@@ -12,86 +12,87 @@
       <h3 style="border: 0; color: #8A9A9E; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 12px; margin: 0; margin-bottom: 5px; padding: 0; vertical-align: baseline;">Order Info</h3>
       <p style="border: 0; color: #67777B; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 17px; font-weight: 300; line-height: 25px; margin: 0; padding: 0; vertical-align: baseline;">Receipt #{{order_number}}</p>
       <p style="border: 0; color: #67777B; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 17px; font-weight: 300; line-height: 25px; margin: 0; padding: 0; vertical-align: baseline;"><!--configure timezone-->{{format_date order_date "%B %d, %Y"}}</p>
-      
-      <h3 style="border: 0; color: #8A9A9E; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 12px; margin: 0; margin-bottom: 5px; margin-top: 15px; padding: 0; vertical-align: baseline;">Bill To</h3>
-
-      <p style="border: 0; color: #67777B; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 17px; font-weight: 300; line-height: 25px; margin: 0; padding: 0; vertical-align: baseline;">
-        {{#if billing_address.first_name}}
-          {{billing_address.first_name}} {{billing_address.last_name}}
-        {{/if}}
-        {{#if billing_address.address_1}}
-          <br>{{billing_address.address_1}}
-        {{/if}}
-        {{#if billing_address.address_2}}
-          <br>{{billing_address.address_2}}
-        {{/if}}
-        {{#if shipping_address.city}}
-          <br>{{billing_address.city}},
-        {{/if}}
-        {{#if shipping_address.state}}
-          {{#if billing_address.other_location}}
-            {{billing_address.other_location_text}}, 
-          {{else}}
-            {{billing_address.state}}, 
+      {{#if billing_address.first_name}}
+        <h3 style="border: 0; color: #8A9A9E; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 12px; margin: 0; margin-bottom: 5px; margin-top: 15px; padding: 0; vertical-align: baseline;">Bill To</h3>
+        <p style="border: 0; color: #67777B; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 17px; font-weight: 300; line-height: 25px; margin: 0; padding: 0; vertical-align: baseline;">
+          {{#if billing_address.first_name}}
+            {{billing_address.first_name}} {{billing_address.last_name}}
           {{/if}}
-        {{/if}}
-        {{#if billing_address.country}}
-          {{billing_address.country}}, {{billing_address.zipcode}}
-        {{/if}}
-        {{#if billing_address.phone_number}}
-          <br>Phone: {{billing_address.phone_number}}
-        {{/if}}
-      </p>
-
-      <h3 style="border: 0; color: #8A9A9E; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 12px; margin: 0; margin-bottom: 5px; margin-top: 15px; padding: 0; vertical-align: baseline;">Ship Status</h3>
+          {{#if billing_address.address_1}}
+            <br>{{billing_address.address_1}}
+          {{/if}}
+          {{#if billing_address.address_2}}
+            <br>{{billing_address.address_2}}
+          {{/if}}
+          {{#if shipping_address.city}}
+            <br>{{billing_address.city}},
+          {{/if}}
+          {{#if shipping_address.state}}
+            {{#if billing_address.other_location}}
+              {{billing_address.other_location_text}}, 
+            {{else}}
+              {{billing_address.state}}, 
+            {{/if}}
+          {{/if}}
+          {{#if billing_address.country}}
+            {{billing_address.country}}, {{billing_address.zipcode}}
+          {{/if}}
+          {{#if billing_address.phone_number}}
+            <br>Phone: {{billing_address.phone_number}}
+          {{/if}}
+        </p>
+      {{/if}}
+      
+      {{#if shipping_address.address_1}}
+        <h3 style="border: 0; color: #8A9A9E; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 12px; margin: 0; margin-bottom: 5px; margin-top: 15px; padding: 0; vertical-align: baseline;">Ship To</h3>
+        <p style="border: 0; color: #67777B; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 17px; font-weight: 300; line-height: 25px; margin: 0; padding: 0; vertical-align: baseline;">
+          {{#if shipping_address.first_name}}
+            {{shipping_address.first_name}} {{shipping_address.last_name}}
+          {{/if}}
+          {{#if shipping_address.address_1}}
+            <br>{{shipping_address.address_1}}
+          {{/if}}
+          {{#if shipping_address.address_2}}
+            <br>{{shipping_address.address_2}}
+          {{/if}}
+          {{#if shipping_address.city}}
+            <br>{{shipping_address.city}}, 
+          {{/if}}
+          {{#if shipping_address.state}}
+            {{#if shipping_address.other_location}}
+              {{shipping_address.other_location_text}}, 
+            {{else}}
+              {{shipping_address.state}}, 
+            {{/if}}
+          {{/if}}
+          {{#if shipping_address.country}}
+            {{shipping_address.country}}, {{shipping_address.zipcode}}
+          {{/if}}
+          {{#if shipping_address.phone_number}}
+            <br>Phone: {{shipping_address.phone_number}}
+          {{/if}}
+        </p>
+      {{/if}}
+      
+      <!-- where is this "if_standard" helper coming from? -->
+      <h3 style="border: 0; color: #8A9A9E; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 12px; margin: 0; margin-bottom: 5px; margin-top: 15px; padding: 0; vertical-align: baseline;">Shipping Type</h3>
       <p style="border: 0; color: #67777B; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 17px; font-weight: 300; line-height: 25px; margin: 0; padding: 0; vertical-align: baseline;">
         <span style="border: 0; font: inherit; font-size: 100%; margin: 0; padding: 0; text-transform: capitalize; vertical-align: baseline;">{{shipping_type}} Shipping</span>
         <br>
-        <span style="border: 0; font: inherit; font-size: 100%; margin: 0; padding: 0; vertical-align: baseline;"> 
+        You will receive an email when your order has shipped.
+        <!--<span> 
           {{#if_standard shipping_type}}
             You will receive an email when your order has shipped.
           {{else}}
             We will process your order as soon as possible. You will receive an email as soon as your order has shipped.
           {{/if_standard}}
-        </span>
-      </p>
-      
-      {{#if shipping_address.address_1}}
-        <h3 style="border: 0; color: #8A9A9E; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 12px; margin: 0; margin-bottom: 5px; margin-top: 15px; padding: 0; vertical-align: baseline;">Ship To</h3>
-      {{/if}}
-
-      <p style="border: 0; color: #67777B; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 17px; font-weight: 300; line-height: 25px; margin: 0; padding: 0; vertical-align: baseline;">
-        {{#if shipping_address.first_name}}
-          {{shipping_address.first_name}} {{shipping_address.last_name}}
-        {{/if}}
-        {{#if shipping_address.address_1}}
-          <br>{{shipping_address.address_1}}
-        {{/if}}
-        {{#if shipping_address.address_2}}
-          <br>{{shipping_address.address_2}}
-        {{/if}}
-        {{#if shipping_address.city}}
-          <br>{{shipping_address.city}}, 
-        {{/if}}
-        {{#if shipping_address.state}}
-          {{#if shipping_address.other_location}}
-            {{shipping_address.other_location_text}}, 
-          {{else}}
-            {{shipping_address.state}}, 
-          {{/if}}
-        {{/if}}
-        {{#if shipping_address.country}}
-          {{shipping_address.country}}, {{shipping_address.zipcode}}
-        {{/if}}
-        {{#if shipping_address.phone_number}}
-          <br>Phone: {{shipping_address.phone_number}}
-        {{/if}}
+        </span>-->
       </p>
 
     </div>
   </div>
 
-  <div style="border: 0; font: inherit; font-size: 100%; margin: 0; padding: 10px 15px 0; vertical-align: baseline;">
+  <div style="border: 0; font: inherit; font-size: 100%; margin: 0; padding: 10px 25px 0; vertical-align: baseline;">
     <table style="border: 0; border-collapse: collapse; border-spacing: 0; font: inherit; font-size: 100%; margin: 0; padding: 0; table-layout: fixed; vertical-align: baseline; width: 100%;">
       <tr style="background-color: #F1F1F1; border: 0; font: inherit; font-size: 100%; margin: 0; padding: 0; vertical-align: baseline;">
         <th style="border: 0; border-bottom: 1px solid #CCC; color: #AAA; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 12px; height: 20px; margin: 0; padding: 0; padding-bottom: 3px; padding-left: 10px; padding-top: 3px; text-align: left; vertical-align: middle; width: 60%;">Item</th>
@@ -147,7 +148,7 @@
     </table>
   </div>
 
-  <div style="border: 0; font: inherit; font-size: 100%; margin: 0; margin-top: 15px; padding: 0 15px 5px; vertical-align: baseline;">
+  <div style="border: 0; font: inherit; font-size: 100%; margin: 0; margin-top: 15px; padding: 0 25px 5px; vertical-align: baseline;">
     <h3 style="border: 0; color: #8A9A9E; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 12px; margin: 0; margin-bottom: 5px; padding: 0; vertical-align: baseline;">Payment</h3>
     <p style="border: 0; color: #67777B; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 17px; font-weight: 300; line-height: 25px; margin: 0; padding: 0; vertical-align: baseline;">{{format_currency total "usd" 2}} <span style="border: 0; font: inherit; font-size: 100%; margin: 0; padding: 0; text-transform: uppercase; vertical-align: baseline;">{{currency}}</span> paid with Credit Card ending *{{card_last4}}.</p>
     {{#if customer_notes}}

@@ -7,7 +7,8 @@
             <h2 class="is-size-4">{{product_title}}</h2>
             <ul>
               {{#each product_variations}}
-                <li>{{product_variation_title}}</li>
+                <li>{{product_variation_title}} - {{#if on_sale}}<span style="text-decoration: line-through;margin-right: 5px;opacity: 0.6;">{{format_currency price "usd" "2"}}</span>{{format_currency sale_price "usd" "2"}}{{else}}{{format_currency price "usd" "2"}}{{/if}}
+                </li>
               {{/each}}
             </ul>
           </div>

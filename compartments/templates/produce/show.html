@@ -42,9 +42,9 @@
           <!-- Example 3 -->
           {{#each product_variations}}
             {{#if on_sale}}
-              <h4>{{product_variation_title}} - {{format_currency sale_price "usd" "0"}}</h4>
+              <h4>{{product_variation_title}} - <span style="text-decoration: line-through;margin-right: 5px;opacity: 0.6;">{{format_currency price "usd" "2"}}</span>{{format_currency sale_price "usd" "2"}}</h4>
             {{else}}
-              <h4>{{product_variation_title}} - {{format_currency price "usd" "0"}}</h4>
+              <h4>{{product_variation_title}} - {{format_currency price "usd" "2"}}</h4>
             {{/if}}
             <button
               class="button button-red button-add-to-cart add-to-cart" 

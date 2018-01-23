@@ -3,13 +3,8 @@
     <div class="columns">
       <div class="column">
         <div class="notification">
-          <h2 class="is-size-4-mobile is-size-3-tablet">Product Title: [{{product_title}}]</h2>
-          <ul>
-              <li>product_plan.name: [{{product_plan.name}}]</li>
-              <li>product_plan.stripe_data.amount: [{{product_plan.stripe_data.amount}}]</li>
-              <li>product_plan.stripe_data.interval: [{{product_plan.stripe_data.interval}}]</li>
-              <li>product_plan.stripe_data.interval_count: [{{product_plan.stripe_data.interval_count}}]</li>
-            </ul>
+          <h2 class="is-size-4-mobile is-size-3-tablet">{{product_title}}</h2>
+          <p>{{product_plan.name}} - ${{format_currency product_plan.stripe_data "amount" "0"}} every {{product_plan.stripe_data.interval_count}} {{product_plan.stripe_data.interval_count}}</p>
 
           <p>${{format_currency product_plan.stripe_data "amount" "0"}} every {{product_plan.stripe_data.interval}}</p>
 

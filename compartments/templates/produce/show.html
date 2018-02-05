@@ -46,18 +46,34 @@
             {{else}}
               <h4>{{product_variation_title}} - {{format_currency price "usd" "2"}}</h4>
             {{/if}}
-            <button
-              class="button button-red button-add-to-cart add-to-cart" 
-              data-product-title="{{../product_title}}" 
-              data-aerostat-id="{{../id}}" 
-              data-quantity="1" 
-              data-product-variation-title="{{product_variation_title}}"
-              data-id="{{id}}"
-              data-misc-data-chopped="false"
-              data-price="{{#if on_sale}}{{sale_price.usd}}{{else}}{{price.usd}}{{/if}}"
-            >
-              <span>Add to Cart</span>
-            </button>
+            {{#if in_stock}}
+              <button
+                class="button button-red button-add-to-cart add-to-cart" 
+                data-product-title="{{../product_title}}" 
+                data-aerostat-id="{{../id}}" 
+                data-quantity="1" 
+                data-product-variation-title="{{product_variation_title}}"
+                data-id="{{id}}"
+                data-misc-data-chopped="false"
+                data-price="{{#if on_sale}}{{sale_price.usd}}{{else}}{{price.usd}}{{/if}}"
+              >
+                <span>Add to Cart</span>
+              </button>
+            {{else}}
+              <button
+                class="button button-red button-add-to-cart add-to-cart" 
+                data-product-title="{{../product_title}}" 
+                data-aerostat-id="{{../id}}" 
+                data-quantity="1" 
+                data-product-variation-title="{{product_variation_title}}"
+                data-id="{{id}}"
+                data-misc-data-chopped="false"
+                data-price="{{#if on_sale}}{{sale_price.usd}}{{else}}{{price.usd}}{{/if}}"
+                disabled=""
+              >
+                <span>Add to Cart</span>
+              </button>
+            {{/if}}
           {{/each}}
 
           <!-- Add to Cart Button: use for Example 1 and Example 2 -->

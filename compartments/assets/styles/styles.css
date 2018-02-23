@@ -92,27 +92,45 @@ form .field + .field{
   }
 }
 
-/* TEMPORARY UNTIL SIGNIN CLASSES ARE READY */
+/* Sign In */
 
-app-signin{
+.signin-container{
   text-align: center;
 }
 
-app-signin h1{
-  text-align: center;
+.signin-container h1{
   font-size: 1.5em;
+  margin-bottom: 0.5em;
 }
 
-app-signin p{
-  text-align: center;
+.signin-container h3{
+  margin-top: 2em;
+  font-size: 0.8em;
+  color: #AAA;
 }
 
-app-signin p.small{
+.signin-container h3 + p{
+  color: #AAA;
+}
+
+.signin-container h3 + p a{
+  color: #AAA;
+  border-bottom: 1px dashed #CCC;
+  padding-bottom: 1px;
+}
+
+.signin-container p{
+  margin: 0 auto 0;
+  max-width: 300px;
+}
+
+.signin-container p.small{
   font-size: 0.8em;
 }
 
-app-signin button.button,
-app-signin a.button{
+.signin-container button.button,
+.signin-container a.button{
   display: inline-block;
-  margin: 5px auto 10px;
+  margin: 0 auto 1em;
+  min-width: 150px;
 }

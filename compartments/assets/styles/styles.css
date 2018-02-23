@@ -100,13 +100,17 @@ form .field + .field{
 
 .signin-container h1{
   font-size: 1.5em;
-  margin-bottom: 0.5em;
+  /*margin-bottom: 0.5em;*/
 }
 
 .signin-container h3{
   margin-top: 2em;
   font-size: 0.8em;
   color: #AAA;
+}
+
+.signin-container h1 + p{
+  margin-top: 1em;
 }
 
 .signin-container h3 + p{
@@ -131,6 +135,6 @@ form .field + .field{
 .signin-container button.button,
 .signin-container a.button{
   display: inline-block;
-  margin: 0 auto 1em;
+  margin: 1em auto 1em;
   min-width: 150px;
 }

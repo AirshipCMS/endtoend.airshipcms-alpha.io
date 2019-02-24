@@ -1,0 +1,60 @@
+{{> subnav}}
+
+<section class="section">
+  <div class="container">
+    <h1>{{fields.header}}</h1>
+    <p class="has-text-grey-light is-size-7">{{fields.description}}</p>
+  </div>
+</section>
+
+<hr>
+
+<section class="section">
+  <div class="container">
+    <p>List this page's related_items for field named <b>Related Collection</b>. Items are pulled from <b>Example Collection</b>.</p>
+    <div class="columns">
+      {{#each related_items.related_collection}}
+        <a href="{{slug}}" class="column is-one-third">
+          <div class="notification is-primary">
+            <h3>{{permalink}}</h3>
+          </div>
+        </a>
+      {{/each}}
+    </div>
+    <p>List this page's related_items for field named <b>Related Collection 2</b>. Items are pulled from <b>Example Collection</b>.</p>
+    <div class="columns">
+      {{#each related_items.related_collection_2}}
+        <a href="{{slug}}" class="column is-one-third">
+          <div class="notification is-primary">
+            <h3>{{permalink}}</h3>
+          </div>
+        </a>
+      {{/each}}
+    </div>
+    <p>List this page's related_items for field named <b>Related Product Collection</b>. Items are pulled from <b>Example Product Collection</b>.</p>
+    <div class="columns">
+      {{#each related_items.related_product_collection}}
+        <a href="{{slug}}" class="column is-one-third">
+          <div class="notification is-success">
+            <h3>{{permalink}}</h3>
+          </div>
+        </a>
+      {{/each}}
+    </div>
+    <p>List this page's related_items for field named <b>Related Product Collection 2</b>. Items are pulled from <b>Example Product Collection</b>.</p>
+    <div class="columns">
+      {{#each related_items.related_product_collection_2}}
+        <a href="{{slug}}" class="column is-one-third">
+          <div class="notification is-success">
+            <h3>{{permalink}}</h3>
+          </div>
+        </a>
+      {{/each}}
+    </div>
+  </div>
+</section>
+
+<!-- content for title-block in layout -->
+{{#content_for 'title-block' }}
+  {{fields.header}}
+{{/content_for}}

@@ -1,0 +1,112 @@
+<section>
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="notification">
+          <h2 class="is-size-4-mobile is-size-3-tablet">{{product_title}}</h2>
+          <!-- Example 1 -->
+          <!-- <select id="variation_select" name="variation_select">
+            <option selected="" disabled="">Select</option>
+            {{#each product_variations}}
+              <option
+                value="{{product_variation_title}}"
+                data-product-variation-title="{{product_variation_title}}"
+                data-id="{{id}}"
+                data-price="{{price.usd}}"
+              >
+                {{product_variation_title}} - {{format_currency price "usd" "0"}}
+              </option>
+            {{/each}}
+          </select> -->
+
+          <!-- Example 2 -->
+          <!-- <ul id="variations-list">
+            {{#each product_variations}}
+              <li
+                class="variation"
+                value="{{product_variation_title}}"
+                data-product-variation-title="{{product_variation_title}}"
+                data-id="{{id}}"
+                data-price="{{price.usd}}"
+              >
+                {{product_variation_title}} - {{format_currency price "usd" "0"}}
+              </li>
+            {{/each}}
+          </ul> -->
+
+          <div>
+            <label for="misc-data-example">Check to have {{ product_title}} chopped</label>
+            <input id="misc-data-example" type="checkbox" name="chopped">
+          </div>
+
+          <!-- Example 3 -->
+          {{#each product_variations}}
+            {{#if on_sale}}
+              <h4>{{product_variation_title}} - <span style="text-decoration: line-through;margin-right: 5px;opacity: 0.6;">{{format_currency price "usd" "2"}}</span>{{format_currency sale_price "usd" "2"}}</h4>
+            {{else}}
+              <h4>{{product_variation_title}} - {{format_currency price "usd" "2"}}</h4>
+            {{/if}}
+            {{#if in_stock}}
+              <button
+                class="button button-red button-add-to-cart add-to-cart" 
+                data-product-title="{{../product_title}}" 
+                data-aerostat-id="{{../id}}" 
+                data-quantity="1" 
+                data-product-variation-title="{{product_variation_title}}"
+                data-id="{{id}}"
+                data-misc-data-chopped="false"
+                data-price="{{#if on_sale}}{{sale_price.usd}}{{else}}{{price.usd}}{{/if}}"
+              >
+                <span>Add to Cart</span>
+              </button>
+            {{else}}
+              <button
+                class="button button-red button-add-to-cart add-to-cart" 
+                data-product-title="{{../product_title}}" 
+                data-aerostat-id="{{../id}}" 
+                data-quantity="1" 
+                data-product-variation-title="{{product_variation_title}}"
+                data-id="{{id}}"
+                data-misc-data-chopped="false"
+                data-price="{{#if on_sale}}{{sale_price.usd}}{{else}}{{price.usd}}{{/if}}"
+                disabled=""
+              >
+                <span>Add to Cart</span>
+              </button>
+            {{/if}}
+          {{/each}}
+
+          <!-- Add to Cart Button: use for Example 1 and Example 2 -->
+          <!-- <div class="add-to-cart-button-container">
+            <button
+              id="add-to-cart-button" 
+              class="button button-red button-add-to-cart add-to-cart" 
+              data-product-title="{{product_title}}" 
+              data-aerostat-id="{{id}}" 
+              data-quantity="1" 
+              data-currency="usd">
+              <span>Add to Cart</span>
+            </button>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="notification" style="margin-top:2rem">
+          <div class="new-properties">
+            <p>site_properties.name: <b>{{site_properties.name}}</b></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="/assets/scripts/airship-add-to-cart-button.min.js"></script>
+<script src="/assets/scripts/variation_selection.js"></script>

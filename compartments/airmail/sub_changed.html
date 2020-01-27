@@ -1,0 +1,22 @@
+<div style="border: 1px solid #CCC; font: inherit; font-size: 100%; margin: 10px; padding: 0; vertical-align: baseline;">
+  <div style="border: 0; border-bottom: 1px solid #CCC; display: block; font: inherit; font-size: 100%; margin: 0; padding: 15px 15px; vertical-align: baseline;">
+    <div style="border: 0; font: inherit; font-size: 100%; margin: 0; padding: 0; vertical-align: baseline;">
+      <h1 style="border: 0; color: #67777B; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 28px; font-weight: 300; letter-spacing: 0; line-height: 36px; margin: 0; margin-bottom: 20px; margin-top: 10px; padding: 0; text-align: center; vertical-align: baseline;"><!--configure-->CompanyName</h1>
+      <!--optional: hardcoded absolute file path to logo <img> file here-->
+      <p style="border: 0; color: #67777B; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 17px; font-weight: 300; line-height: 25px; margin: 0; padding: 0; text-align: center; vertical-align: baseline;">Subscription Updated</p>
+    </div>
+  </div>
+
+  <div style="border: 0; display: block; font: inherit; font-size: 100%; margin: 0; padding: 25px; vertical-align: baseline;">
+    <div style="border: 0; font: inherit; font-size: 100%; margin: 0; padding: 0; vertical-align: baseline;">
+      <p style="background-color: #E4E9EB; border: 0; border-radius: 2px; color: #67777B; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 17px; font-weight: 300; line-height: 25px; margin: 0; margin-bottom: 10px; padding: 20px; vertical-align: baseline;">Your Subscription plan has changed to "{{stripe_data.plan.name}}."</p>
+      
+      <h3 style="border: 0; color: #8A9A9E; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 12px; margin: 0; margin-bottom: 5px; margin-top: 15px; padding: 0; vertical-align: baseline;">Subscription Details</h3>
+      <p style="border: 0; color: #67777B; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 17px; font-weight: 300; line-height: 25px; margin: 0; padding: 0; vertical-align: baseline;">Order: <b style="border: 0; font: inherit; font-size: 100%; font-weight: 700; margin: 0; padding: 0; vertical-align: baseline;">#{{order_data.order.order_number}}</b></p>
+      <p style="border: 0; color: #67777B; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 17px; font-weight: 300; line-height: 25px; margin: 0; padding: 0; vertical-align: baseline;">Subscription Plan: <b style="border: 0; font: inherit; font-size: 100%; font-weight: 700; margin: 0; padding: 0; vertical-align: baseline;">{{stripe_data.plan.name}} - {{stripe_data.plan.amount}} every {{stripe_data.plan.interval_count}} {{stripe_data.plan.interval}}</b>
+      </p>
+      <p style="border: 0; color: #67777B; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 17px; font-weight: 300; line-height: 25px; margin: 0; padding: 0; vertical-align: baseline;">Subscription ID: <b style="border: 0; font: inherit; font-size: 100%; font-weight: 700; margin: 0; padding: 0; vertical-align: baseline;">{{stripe_data.id}}</b></p>
+
+    </div>
+  </div>
+</div>

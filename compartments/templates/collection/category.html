@@ -1,0 +1,52 @@
+{{> subnav}}
+
+<hr>
+
+<section class="section">
+  <div class="container">
+    <p>Lists all {{#if collection.has_products}}products{{else}}posts{{/if}} in the &ldquo;{{collection.title}}&rdquo; collection.</p>
+    <div class="columns">
+      {{#each items}}
+        <a class="column is-one-third" href="{{slug}}">
+          <div class="notification {{#if ../collection.has_products}}is-success{{else}}is-primary{{/if}}">
+            <h3>{{permalink}}</h3>
+            <p>
+              {{#each categories}}
+                {{this.permalink}} /
+              {{/each}}
+            </p>
+            <p>
+              {{#each tags}}
+                {{this.name}}
+              {{/each}}
+            </p>
+          </div>
+        </a>
+      {{/each}}
+    </div>
+    <a class="button {{#if collection.has_products}}is-success{{else}}is-primary{{/if}}" href="{{params.fetch_prev}}">Previous Page</a>
+    <a class="button {{#if collection.has_products}}is-success{{else}}is-primary{{/if}}" href="{{params.fetch_next}}">Next Page</a>
+    <!-- <div class="notification is-light">
+      <p>To Do: Test multiple related collections &amp; product collections on a post, and no values set.</p>
+    </div> -->
+  </div>
+</section>
+
+<!-- <div class="airship-help-block section">
+  <div class="container">
+    <div class="notification is-light">
+      <style>
+        .notification li{
+          list-style-type: disc;
+          padding: 0 1rem;
+        }
+      </style>
+      {{{help}}}
+    </div>
+  </div>
+</div> -->
+
+<!-- content for title-block in layout -->
+{{#content_for 'title-block' }}
+  {{collection.title}} &rsaquo; {{category.title}}
+{{/content_for}}

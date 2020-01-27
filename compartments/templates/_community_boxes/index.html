@@ -1,0 +1,32 @@
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      {{#each items}}
+        <a href="{{slug}}" class="column is-one-third">
+          <div class="notification is-success">
+            <h2 class="is-size-4">Product Title: [{{product_title}}]</h2>
+            <ul>
+              <li>{{product_plan.name}}</li>
+              <li>{{product_plan.stripe_data.amount}}</li>
+              <li>Every {{product_plan.stripe_data.interval_count}} {{product_plan.stripe_data.interval}}s</li>
+            </ul>
+          </div>
+        </a>
+      {{/each}}
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="notification" style="margin-top:2rem">
+          <div class="new-properties">
+            <p>site_properties.name: <b>{{site_properties.name}}</b></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

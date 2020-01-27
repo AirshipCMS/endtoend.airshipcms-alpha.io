@@ -1,0 +1,72 @@
+<div style="border: 1px solid #CCC; font: inherit; font-size: 100%; margin: 10px; padding: 0; vertical-align: baseline;">
+    <div style="border: 0; border-bottom: 1px solid #CCC; display: block; font: inherit; font-size: 100%; margin: 0; padding: 15px 15px; vertical-align: baseline;">
+      <div style="border: 0; font: inherit; font-size: 100%; margin: 0; padding: 0; vertical-align: baseline;">
+        <h1 style="border: 0; color: #67777B; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 28px; font-weight: 300; letter-spacing: 0; line-height: 36px; margin: 0; margin-bottom: 20px; margin-top: 10px; padding: 0; text-align: center; vertical-align: baseline;"><!--configure-->CompanyName</h1>
+        <!--optional: hardcoded absolute file path to logo <img> file here-->
+        <p style="border: 0; color: #67777B; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 17px; font-weight: 300; line-height: 25px; margin: 0; padding: 0; text-align: center; vertical-align: baseline;">Shipment</p>
+      </div>
+    </div>
+
+    <div style="border: 0; display: block; font: inherit; font-size: 100%; margin: 0; padding: 25px; vertical-align: baseline;">
+      <div style="border: 0; font: inherit; font-size: 100%; margin: 0; padding: 0; vertical-align: baseline;">
+        <p style="background-color: #E5F2A7; border: 0; border-radius: 2px; color: #90a52d; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 17px; font-weight: 300; line-height: 25px; margin: 0; margin-bottom: 10px; padding: 20px; vertical-align: baseline;">Your Order was Shipped on 
+          <span style="border: 0; font: inherit; font-size: 100%; margin: 0; padding: 0; vertical-align: baseline;"><!--configure timezone-->{{format_date ship_date "%B %d, %Y"}}</span>! 
+          Please use the tracking number at the {{shipping_provider}} website to track your order.</p>
+          
+        <h3 style="border: 0; color: #8A9A9E; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 12px; margin: 0; margin-bottom: 5px; margin-top: 15px; padding: 0; vertical-align: baseline;">Order Info</h3>
+        <p style="border: 0; color: #67777B; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 17px; font-weight: 300; line-height: 25px; margin: 0; padding: 0; vertical-align: baseline;">Receipt #{{order_number}}</p>
+        <p style="border: 0; color: #67777B; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 17px; font-weight: 300; line-height: 25px; margin: 0; padding: 0; vertical-align: baseline;"><!--configure timezone-->{{format_date order_date "%B %d, %Y"}}</p>
+        
+        <h3 style="border: 0; color: #8A9A9E; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 12px; margin: 0; margin-bottom: 5px; margin-top: 15px; padding: 0; vertical-align: baseline;">Ship To</h3>
+        
+        <p style="border: 0; color: #67777B; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 17px; font-weight: 300; line-height: 25px; margin: 0; padding: 0; vertical-align: baseline;">
+          {{#if shipping_address.first_name}}
+            {{shipping_address.first_name}} {{shipping_address.last_name}}
+          {{/if}}
+          {{#if shipping_address.address_1}}
+            <br>{{shipping_address.address_1}}
+          {{/if}}
+          {{#if shipping_address.address_2}}
+            <br>{{shipping_address.address_2}}
+          {{/if}}
+          {{#if shipping_address.city}}
+            <br>{{shipping_address.city}}, 
+          {{/if}}
+          {{#if shipping_address.state}}
+            {{#if shipping_address.other_location}}
+              {{shipping_address.other_location_text}}, 
+            {{else}}
+              {{shipping_address.state}}, 
+            {{/if}}
+          {{/if}}
+          {{#if shipping_address.country}}
+            {{shipping_address.country}}, {{shipping_address.zipcode}}
+          {{/if}}
+          {{#if shipping_address.phone_number}}
+            <br>Phone: {{shipping_address.phone_number}}
+          {{/if}}
+        </p>
+        
+        <h3 style="border: 0; color: #8A9A9E; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 12px; margin: 0; margin-bottom: 5px; margin-top: 15px; padding: 0; vertical-align: baseline;">Shipping Type</h3>
+        <p style="border: 0; color: #67777B; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 17px; font-weight: 300; line-height: 25px; margin: 0; padding: 0; vertical-align: baseline;"><span style="border: 0; font: inherit; font-size: 100%; margin: 0; padding: 0; vertical-align: baseline;">{{shipping_type}} Shipping</span>
+        {{#if shipping_provider}}
+          , <span style="border: 0; font: inherit; font-size: 100%; margin: 0; padding: 0; vertical-align: baseline;">Carrier: {{shipping_provider}}</span>
+        {{/if}}
+        {{#if tracking_number}}
+          ,<span style="border: 0; font: inherit; font-size: 100%; margin: 0; padding: 0; vertical-align: baseline;">Tracking Number: {{tracking_number}}</span>.
+        {{/if}}
+        </p>
+        {{#if shipment_notes}}
+          <p style="border: 0; color: #67777B; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 17px; font-weight: 300; line-height: 25px; margin: 0; padding: 0; vertical-align: baseline;">{{shipment_notes}}</p>
+        {{/if}}
+
+        {{#if customer_notes}}
+          <h3 style="border: 0; color: #8A9A9E; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 12px; margin: 0; margin-bottom: 5px; margin-top: 15px; padding: 0; vertical-align: baseline;">Customer Notes</h3>
+          <p style="border: 0; color: #67777B; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 17px; font-weight: 300; line-height: 25px; margin: 0; padding: 0; vertical-align: baseline;">{{customer_notes}}</p>
+        {{/if}}
+      </div>
+    </div>
+    <div style="border: 0; border-top: 1px solid #CCC; color: #8A9A9E; font: inherit; font-size: 100%; margin: 0; margin-top: 15px; padding: 20px 15px; vertical-align: baseline;">
+      <h2 style="border: 0; font: inherit; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 100%; font-style: italic; margin: 0; padding: 0; text-align: center; vertical-align: baseline;">Thank you for shopping with <!--configure-->CompanyName.</h2>
+    </div>
+  </div>

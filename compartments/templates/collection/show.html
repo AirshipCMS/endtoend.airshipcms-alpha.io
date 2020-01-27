@@ -1,0 +1,230 @@
+{{> subnav}}
+
+<section class="section">
+  <div class="container">
+    <h1>{{fields.header}}</h1>
+    <p class="has-text-grey-light is-size-7">{{fields.description}}</p>
+    <p class="has-text-grey-light is-size-7">
+      {{#each categories}}
+        {{this.permalink}} /
+      {{/each}}
+    </p>
+    <p class="has-text-grey-light is-size-7">
+      {{#each tags}}
+        {{this.name}} /
+      {{/each}}
+    </p>
+  </div>
+</section>
+
+<hr>
+
+<section class="section">
+  <div class="container">
+    
+    <!-- Example 3 -->
+    {{#each product_variations}}
+    {{#if on_sale}}
+    <h4>{{product_variation_title}} - <span style="text-decoration: line-through;margin-right: 5px;opacity: 0.6;">{{format_currency price "usd" "2"}}</span>{{format_currency sale_price "usd" "2"}}</h4>
+    {{else}}
+    <h4>{{product_variation_title}} - {{format_currency price "usd" "2"}}</h4>
+    {{/if}}
+    <div>
+      <label for="misc-data-example">Check to have {{ product_title}} chopped</label>
+      <input id="misc-data-example" type="checkbox" name="chopped">
+    </div>
+    {{#if in_stock}}
+        <button
+          class="button button-red button-add-to-cart add-to-cart" 
+          data-product-title="{{../product_title}}" 
+          data-aerostat-id="{{../id}}" 
+          data-quantity="1" 
+          data-product-variation-title="{{product_variation_title}}"
+          data-id="{{id}}"
+          data-misc-data-chopped="false"
+          data-price="{{#if on_sale}}{{sale_price.usd}}{{else}}{{price.usd}}{{/if}}"
+        >
+          <span>Add to Cart</span>
+        </button>
+      {{else}}
+        <button
+          class="button button-red button-add-to-cart add-to-cart" 
+          data-product-title="{{../product_title}}" 
+          data-aerostat-id="{{../id}}" 
+          data-quantity="1" 
+          data-product-variation-title="{{product_variation_title}}"
+          data-id="{{id}}"
+          data-misc-data-chopped="false"
+          data-price="{{#if on_sale}}{{sale_price.usd}}{{else}}{{price.usd}}{{/if}}"
+          disabled=""
+        >
+          <span>Add to Cart</span>
+        </button>
+      {{/if}}
+    {{/each}}
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <p>List this page's related_items for field named <b>Related Collection</b>. Items are pulled from <b>Example Collection</b>.</p>
+    <div class="columns">
+      {{#each related_items.related_collection}}
+        <a href="{{slug}}" class="column is-one-third">
+          <div class="notification is-primary">
+            <h3>{{permalink}}</h3>
+            <p>
+              {{#each categories}}
+                {{this.permalink}} /
+              {{/each}}
+            </p>
+            <p>
+              {{#each tags}}
+                {{this.name}}
+              {{/each}}
+            </p>
+          </div>
+        </a>
+      {{/each}}
+    </div>
+    <p>List this page's related_items for field named <b>Related Collection 2</b>. Items are pulled from <b>Example Collection</b>.</p>
+    <div class="columns">
+      {{#each related_items.related_collection_2}}
+        <a href="{{slug}}" class="column is-one-third">
+          <div class="notification is-primary">
+            <h3>{{permalink}}</h3>
+            <p>
+              {{#each categories}}
+                {{this.permalink}} /
+              {{/each}}
+            </p>
+            <p>
+              {{#each tags}}
+                {{this.name}}
+              {{/each}}
+            </p>
+          </div>
+        </a>
+      {{/each}}
+    </div>
+    <p>List this page's related_items for field named <b>Related Product Collection</b>. Items are pulled from <b>Example Product Collection</b>.</p>
+    <div class="columns">
+      {{#each related_items.related_product_collection}}
+        <a href="{{slug}}" class="column is-one-third">
+          <div class="notification is-success">
+            <h3>{{permalink}}</h3>
+            <p>
+              {{#each categories}}
+                {{this.permalink}} /
+              {{/each}}
+            </p>
+            <p>
+              {{#each tags}}
+                {{this.name}}
+              {{/each}}
+            </p>
+          </div>
+        </a>
+      {{/each}}
+    </div>
+    <p>List this page's related_items for field named <b>Related Product Collection 2</b>. Items are pulled from <b>Example Product Collection</b>.</p>
+    <div class="columns">
+      {{#each related_items.related_product_collection_2}}
+        <a href="{{slug}}" class="column is-one-third">
+          <div class="notification is-success">
+            <h3>{{permalink}}</h3>
+            <p>
+              {{#each categories}}
+                {{this.permalink}} /
+              {{/each}}
+            </p>
+            <p>
+              {{#each tags}}
+                {{this.name}}
+              {{/each}}
+            </p>
+          </div>
+        </a>
+      {{/each}}
+    </div>
+  </div>
+</section>
+
+
+<!-- {{#if aerostat_collection.has_products}}
+{{else}}
+  <div class="notification is-danger">
+    <p>Rendering Error: No Related Items show on this Collection Post</p>
+  </div>
+{{/if}} -->
+
+<!-- TESTS RENDERING SUBSCRIPTIONS, reformat and also add to page.-->
+<!-- <section>
+  <div class="container">
+    <h2 class="is-size-4-mobile is-size-3-tablet">&ldquo;Related Subscriptions&rdquo; Posts:</h2>
+    <div class="columns">
+      {{#each related_items.related_subscriptions}}
+        <a class="column is-one-third" href="{{slug}}">
+          <div class="notification is-primary">
+            <h3>product_title: {{product_title}}</h3>
+            <p>product_plan.stripe_data.amount: {{product_plan.stripe_data.amount}}</span></p>
+          </div>
+        </a>
+      {{/each}}
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2 class="is-size-4-mobile is-size-3-tablet">&ldquo;Related Subscriptions&rdquo; Posts:</h2>
+    <div class="columns">
+      {{#each related_items.related_subscriptions}}
+        <a class="column is-one-third" href="{{slug}}">
+          <div class="notification is-primary">
+            <h3>product_title: {{product_title}}</h3>
+            <p>product_plan.stripe_data.amount: {{product_plan.stripe_data.amount}}</span></p>
+          </div>
+        </a>
+      {{/each}}
+    </div>
+  </div>
+</section> -->
+
+<!-- TESTS RENDERING SITE NAME, probably can delete.-->
+<!-- <section>
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="notification" style="margin-top:2rem">
+          <div class="new-properties">
+            <p>site_properties.name: <b>{{site_properties.name}}</b></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- HELP -->
+<!-- <div class="airship-help-block section">
+  <div class="container">
+    <div class="notification is-light">
+      <style>
+        .notification li{
+          list-style-type: disc;
+          padding: 0 1rem;
+        }
+      </style>
+      {{{help}}}
+    </div>
+  </div>
+</div> -->
+
+<!-- content for title-block in layout -->
+{{#content_for 'title-block' }}
+  {{fields.header}}
+{{/content_for}}
+
+<script src="/assets/scripts/airship-add-to-cart-button.min.js"></script>
+<script src="/assets/scripts/variation_selection.js"></script>

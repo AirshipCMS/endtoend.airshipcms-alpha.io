@@ -1,0 +1,99 @@
+<section>
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="notification">
+          <h2 class="is-size-4-mobile is-size-3-tablet">{{product_title}}</h2>
+          <p>{{product_plan.name}} - ${{format_currency product_plan.stripe_data "amount" "0"}} every {{product_plan.stripe_data.interval_count}} {{product_plan.stripe_data.interval_count}}</p>
+
+          <p>${{format_currency product_plan.stripe_data "amount" "0"}} every {{product_plan.stripe_data.interval}}</p>
+
+          <div>
+            <label for="misc-data-example">Check to have items chopped</label>
+            <input id="misc-data-example" type="checkbox" name="chopped">
+          </div>
+
+          <div class="add-to-cart-button-container">
+            <button
+              id="add-to-cart-button" 
+              class="button button-red button-add-to-cart add-to-cart add-to-cart-button add-sub-button"
+              data-product-title="{{product_title}}"
+              data-type="plan"
+              data-aerostat-id="{{id}}"
+              data-name="{{product_plan.name}}"
+              data-id="{{product_plan.id}}"
+              data-interval={{product_plan.stripe_data.interval}}
+              data-price="{{product_plan.stripe_data.amount}}"
+              data-has-no-shipments="{{fields.has_no_shipments}}"
+              >
+              <span>Add to Cart</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2 class="is-size-4-mobile is-size-3-tablet">&ldquo;Related Subscriptions&rdquo; Posts:</h2>
+    <div class="columns">
+      {{#each related_items.related_subscriptions}}
+        <a class="column is-one-third" href="{{slug}}">
+          <div class="notification is-primary">
+            <h3>product_title: {{product_title}}</h3>
+            <p>product_plan.stripe_data.amount: {{product_plan.stripe_data.amount}}</span></p>
+          </div>
+        </a>
+      {{/each}}
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2 class="is-size-4-mobile is-size-3-tablet">&ldquo;Related Subscriptions&rdquo; Posts:</h2>
+    <div class="columns">
+      {{#each related_items.related_subscriptions}}
+        <a class="column is-one-third" href="{{slug}}">
+          <div class="notification is-primary">
+            <h3>product_title: {{product_title}}</h3>
+            <p>product_plan.stripe_data.amount: {{product_plan.stripe_data.amount}}</span></p>
+          </div>
+        </a>
+      {{/each}}
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="notification" style="margin-top:2rem">
+          <div class="new-properties">
+            <p>site_properties.name: <b>{{site_properties.name}}</b></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section>
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="notification" style="margin-top:2rem">
+          <div class="new-properties">
+            {{{help}}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<script src="/assets/scripts/airship-add-to-cart-button.min.js"></script>
+<script src="/assets/scripts/variation_selection.js"></script>

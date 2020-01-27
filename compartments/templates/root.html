@@ -1,0 +1,63 @@
+<section class="hero is-primary is-bold is-medium">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="subtitle">Welcome to INSECURE:</h2>
+      <h1>SERVICE ACCOUNT LAUNCH UPDATE</h1>
+      <h1 class="title">{{fields.header}}</h1>
+    </div>
+  </div>
+</section>
+
+<!-- <section>
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="notification" style="margin-top:3rem">
+          <div class="new-properties">
+            {{{help}}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<section>
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="notification" style="margin-top:2rem">
+          <div class="new-properties">
+            <p>site_properties.name: <b>{{site_properties.name}}</b></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section>
+  <div class="container">
+    <h2 class="is-size-4-mobile is-size-3-tablet">&ldquo;Related Subscriptions&rdquo; Posts:</h2>
+    <div class="columns">
+      {{#each related_items.related_subscriptions}}
+        <a class="column is-one-third" href="{{slug}}">
+          <div class="notification is-primary">
+            <h3>product_title: {{product_title}}</h3>
+            <p>product_plan.stripe_data.amount: {{product_plan.stripe_data.amount}}</span></p>
+          </div>
+        </a>
+      {{/each}}
+    </div>
+  </div>
+</section> -->
+
+<!-- content for title-block in layout -->
+{{#content_for 'title-block' }}
+  {{fields.header}}
+{{/content_for}}
+
+<!-- content for title-block in partial -->
+{{#content_for 'title-block' }}
+  {{fields.header}}
+{{/content_for}}

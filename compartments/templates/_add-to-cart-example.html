@@ -1,0 +1,22 @@
+<!-- this example pulls all products from a /api/product_collection/{{collection}} and renders each product in a SELECT dropdown with the appropriate Add to Cart Button data attributes -->
+<select id="variation_select">
+  <option selected="" disabled="">Select</option>
+</select>
+
+<div>
+  <label for="misc-data-example">Item Notes</label>
+  <input id="misc-data-example" type="text" name="misc-data">
+</div>
+
+<div class="add-to-cart-button-container">
+  <button
+    id="add-to-cart-button" 
+    data-aerostat-id=""
+    data-misc-data-notes=""
+    class="button button-red button-add-to-cart add-to-cart" 
+  >
+    <span>Add to Cart</span>
+  </button>
+</div>
+<script src="/assets/scripts/add-to-cart-example.js"></script>
+<script src="/assets/scripts/airship-add-to-cart-button.min.js"></script>

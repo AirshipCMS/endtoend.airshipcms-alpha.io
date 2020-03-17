@@ -9,6 +9,15 @@
 
 <hr>
 
+<p>{{fields.text}}</p>
+<p>{{fields.textarea}}</p>
+<p>{{fields.richtext_textarea}}</p>
+<p>{{#each fields.image}}{{secure_url}}{{/each}}</p>
+<p>{{#each fields.link}}{{title}}{{/each}}</p>
+<p>{{#each fields.link}}{{title}}{{/each}}</p>
+
+<hr>
+
 <section class="section">
   <div class="container">
     <p>List this page's related_items for field named <b>Related Collection</b>. Items are pulled from <b>Example Collection</b>.</p>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>{{#block 'title-block'}} Airship CMS - MARCH 15 {{/block}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- BULMA CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
+    
+    <!-- AIRSHIP CSS -->
+    <script src="/assets/scripts/navbar.js"></script>
+
+    <link rel="stylesheet" href="/assets/styles/styles.css">
+    <link rel="stylesheet" type="text/css" href="/assets/styles/airship-nav-login-status.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/styles/airship-nav-cart-counter.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/styles/airship-bulma-theme.css">
+
+    <style>
+      .new-properties ul{
+        list-style-type: disc;
+        padding-left: 20px;
+      }
+    </style>
+
+  </head>
+  <body>
+    <nav class="navbar ">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+          End to End
+        </a>
+
+        <div class="navbar-burger burger" data-target="navMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <div id="navMenu" class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item" href="/example-page">
+            See All Pages
+          </a>
+          <div class="navbar-item navbar-custom">
+            <div class="airship-nav-cart-counter"></div>
+          </div>
+          <div class="navbar-item navbar-custom">
+            <div class="airship-nav-login-status"></div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    {{{ template }}}
+    <script src="/assets/scripts/airship-nav-login-status.min.js"></script>
+    <script src="/assets/scripts/airship-nav-cart-counter.min.js"></script>
+  </body>
+</html>

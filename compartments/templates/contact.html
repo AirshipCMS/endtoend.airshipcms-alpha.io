@@ -1,0 +1,340 @@
+<section class="hero is-small is-primary">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="subtitle">Airship CMS Forms</h2>
+      <h1 class="title">
+        Contact Form Example
+      </h1>
+    </div>
+  </div>
+</section>
+
+
+<section class="section body-section">
+  <div class="container">
+    <form>
+      <div class="columns">
+        <div class="column">
+          <h2 class="subtitle is-size-3">Text &amp; Textarea</h2>
+          <p>It is easy to save <b>Text</b> and <b>Textarea</b> type fields in Airship.</p>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column is-6-tablet is-8-desktop">
+          <div class="field">
+            <label for="text_1" class="label">Text 1*</label>
+            <div class="control">
+              <input name="text_1" id="text_1" type="text" class="input required" placeholder="Text 1 Placeholder" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="text_2" class="label">Text 2</label>
+            <div class="control">
+              <input name="text_2" id="text_2" type="text" class="input" placeholder="Text 2 Placeholder">
+            </div>
+          </div>
+        </div>
+        <div class="column is-6-tablet is-4-desktop">
+          <div class="notification">
+            <p>How it saves to an Airship CMS post:</p>
+            <img src="https://user-images.githubusercontent.com/1865400/29198508-49fc5e46-7de0-11e7-92f2-23766826a943.png" alt="Text Fields in Airship">
+          </div>
+        </div>
+      </div>
+
+      <div class="columns">
+        <div class="column is-6-tablet is-8-desktop">
+          <div class="field">
+            <label for="textarea_1" class="label">Textarea 1</label>
+            <div class="control">
+              <textarea name="textarea_1" id="textarea_1" class="textarea" placeholder="Textarea 1 Placeholder"></textarea>
+            </div>
+          </div>
+          <div class="field">
+            <label for="textarea_2" class="label">Textarea 2</label>
+            <div class="control">
+              <textarea name="textarea_2" id="textarea_2" class="textarea" placeholder="Textarea 2 Placeholder"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="column is-6-tablet is-4-desktop">
+          <div class="notification">
+            <p>How it saves to an Airship CMS post:</p>
+            <img src="https://user-images.githubusercontent.com/1865400/29198518-64bd7b5c-7de0-11e7-8089-c4cfc06ef2fd.png" alt="Example Textarea Blocks">
+          </div>
+        </div>
+      </div>
+
+      <div class="columns">
+        <div class="column">
+          <hr>
+          <h2 class="subtitle is-size-3">Select &amp; Radio</h2>
+          <p>It is also fairly easy to create <b>Select</b> and <b>Radio</b> fields on the frontend of your form and save the output data as <b>Text</b> or <b>Textarea</b> fields.</p>
+        </div>
+      </div>
+
+      <div class="columns">
+        <div class="column is-6-tablet is-8-desktop">
+          <div class="field">
+            <label for="select_to_text" class="label">Select to Text*</label>
+            <div class="control">
+              <div class="select">
+                <select name="select_to_text" id="select_to_text" required class="required">
+                  <option value="">Select</option>
+                  <option>Any Arbitrary Option 1</option>
+                  <option>Any Arbitrary Option 2</option>
+                  <option>Any Arbitrary Option 3</option>
+                  <option>Any Arbitrary Option 4</option>
+                  <option>Any Arbitrary Option 5</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <label for="select_to_text_2" class="label">Select to Text 2</label>
+            <div class="control">
+              <div class="select">
+                <select id="select_to_text_2" name="select_to_text_2">
+                  <option value="">Select</option>
+                  <option>Another Arbitrary Option 1</option>
+                  <option>Another Arbitrary Option 2</option>
+                  <option>Another Arbitrary Option 3</option>
+                  <option>Another Arbitrary Option 4</option>
+                  <option>Another Arbitrary Option 5</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column is-6-tablet is-4-desktop">
+          <div class="notification">
+            <p>How it saves to an Airship CMS post:</p>
+            <img src="https://user-images.githubusercontent.com/1865400/29198548-bda9295a-7de0-11e7-988d-afea5aea6367.png" alt="Select to Text">
+          </div>
+        </div>
+      </div>
+
+      <div class="columns">
+        <div class="column is-6-tablet is-8-desktop">
+          <div class="field">
+            <label for="" class="label">Radio to Text*</label>
+            <div class="control">
+              <label class="radio">
+                <input type="radio" name="radio_to_text" value="Yes" required class="required">
+                Yes
+              </label>
+              <label class="radio">
+                <input type="radio" name="radio_to_text" value="No">
+                No
+              </label>
+            </div>
+          </div>
+          <div class="field">
+            <label for="" class="label">Radio to Text 2 </label>
+            <div class="control">
+              <label class="radio">
+                <input type="radio" name="radio_to_text_2" value="Agree">
+                Agree
+              </label>
+              <label class="radio">
+                <input type="radio" name="radio_to_text_2" value="Disagree">
+                Disagree
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="column is-6-tablet is-4-desktop">
+          <div class="notification">
+            <p>How it saves to an Airship CMS post:</p>
+            <img src="https://user-images.githubusercontent.com/1865400/29198585-22dea534-7de1-11e7-85b2-550835e82a04.png" alt="Radio to Text">
+          </div>
+        </div>
+      </div>
+
+      <div class="columns">
+        <div class="column">
+          <p>You can save Select and Radio fields as Select and Radio options in the Airship post, although you need to make sure each option matches the options set in Airship. If the data does not have to be manipulated after it is submitted, it is much easier to save Select and Radio form options to <b>Text</b> (examples above) rather than <b>Select</b> and <b>Radio</b> fields.</p>
+        </div>
+      </div>
+
+      <div class="columns">
+        <div class="column is-6-tablet is-8-desktop">
+          <div class="field">
+            <label for="select_to_select" class="label">Select to Select</label>
+            <div class="control">
+              <div class="select">
+                <select id="select_to_select" name="select_to_select">
+                  <option value="">Select</option>
+                  <option>Select 1</option>
+                  <option>Select 2</option>
+                  <option>Select 3</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <label for="select_to_select_2" class="label">Select to Select 2</label>
+            <div class="control">
+              <div class="select">
+                <select id="select_to_select_2" name="select_to_select_2">
+                  <option value="">Select</option>
+                  <option>Select 1</option>
+                  <option>Select 2</option>
+                  <option>Select 3</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column is-6-tablet is-4-desktop">
+          <div class="notification">
+            <p>How it saves to an Airship CMS post:</p>
+            <img src="https://user-images.githubusercontent.com/1865400/29198607-51969cc4-7de1-11e7-9fdd-2be1c1b08cbd.png" alt="Select to Select">
+            <p>The select options in your form markup and script must exactly match the spelling, capitalization, and spacing of how it is set up in the collection.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns">
+        <div class="column is-6-tablet is-8-desktop">
+          <div class="field">
+            <label for="" class="label">Radio to Radio</label>
+            <div class="control">
+              <label class="radio">
+                <input type="radio" name="radio_to_radio" value="Radio 1">
+                Radio 1
+              </label>
+              <label class="radio">
+                <input type="radio" name="radio_to_radio" value="Radio 2">
+                Radio 2
+              </label>
+              <label class="radio">
+                <input type="radio" name="radio_to_radio" value="Radio 3">
+                Radio 3
+              </label>
+            </div>
+          </div>
+          <div class="field">
+            <label for="" class="label">Radio to Radio 2</label>
+            <div class="control">
+              <label class="radio">
+                <input type="radio" name="radio_to_radio_2" value="Radio 1">
+                Radio 1
+              </label>
+              <label class="radio">
+                <input type="radio" name="radio_to_radio_2" value="Radio 2">
+                Radio 2
+              </label>
+              <label class="radio">
+                <input type="radio" name="radio_to_radio_2" value="Radio 3">
+                Radio 3
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="column is-6-tablet is-4-desktop">
+          <div class="notification">
+            <p>How it saves to an Airship CMS post:</p>
+            <img src="https://user-images.githubusercontent.com/1865400/29198681-ef17b3e8-7de1-11e7-82ad-1597472098ef.png" alt="Radio to Radio">
+            <p>The radio options in your form markup and script must exactly match the spelling, capitalization, and spacing of how it is set up in the collection.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns">
+        <div class="column">
+          <hr>
+          <h2 class="subtitle is-size-3">Checkboxes</h2>
+          <p>You can also save checkbox data:</p>
+        </div>
+      </div>
+
+      <div class="columns">
+        <div class="column is-6-tablet is-8-desktop">
+          <div class="field">
+            <label class="label">Checkbox</label>
+            <div class="control">
+              <label class="checkbox">
+                <input id="checkbox" type="checkbox" name="checkbox">
+                Checkbox
+              </label>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Checkbox 2</label>
+            <div class="control">
+              <label class="checkbox">
+                <input id="checkbox_2" type="checkbox" name="checkbox_2">
+                Checkbox 2
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="column is-6-tablet is-4-desktop">
+          <div class="notification">
+            <p>How it saves to an Airship CMS post:</p>
+            <img src="https://user-images.githubusercontent.com/1865400/29198746-7e246cca-7de2-11e7-8b13-b8abd1a1973d.png" alt="Checkboxes">
+          </div>
+        </div>
+      </div>
+
+      <div class="columns">
+        <div class="column">
+          <p>Although for more complex checkbox data, it is easier to show checkbox options on the frontend, and save the data to a <b>Text</b> field:</p>
+        </div>
+      </div>
+
+      <div class="columns">
+        <div class="column is-6-tablet is-8-desktop">
+          <div class="field">
+            <label class="label">Checkboxes Set</label>
+            <div class="control">
+              <label class="checkbox">
+                <input type="checkbox" name="checkboxes_set" id="checkbox_1">
+                Checkbox 1
+              </label>
+            </div>
+            <div class="control">
+              <label class="checkbox">
+                <input type="checkbox" name="checkboxes_set" id="checkbox_2">
+                Checkbox 2
+              </label>
+            </div>
+            <div class="control">
+              <label class="checkbox">
+                <input type="checkbox" name="checkboxes_set" id="checkbox_3">
+                Checkbox 3
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="column is-6-tablet is-4-desktop">
+          <div class="notification">
+            <p>How it saves to an Airship CMS post:</p>
+            <img src="https://user-images.githubusercontent.com/1865400/29198781-b767899a-7de2-11e7-9bb3-aec552ff2f54.png" alt="Checkboxes to Text">
+          </div>
+        </div>
+      </div>
+
+      <div id="form-error" class="hidden">
+        <div class="notification is-danger">
+          <p>Please fill in required fields.</p>
+        </div>
+      </div>
+
+      <div id="submission-message" class="hidden">
+        <div class="notification is-success">
+          <p>Thank you for your submission.</p>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="control">
+          <button class="button is-primary" onclick="validateForm()" type="button">Submit</button>
+        </div>
+      </div>      
+    </form>
+  </div>
+</section>
+<!-- <script src="//code.jquery.com/jquery-3.2.1.min.js"></script> -->
+<script src="/assets/scripts/contact.js"></script>

@@ -4,8 +4,8 @@
       <div class="column">
         <div class="notification">
           <h2 class="is-size-4-mobile is-size-3-tablet">{{product_title}}</h2>
-          <p>{{product_plan.name}} - ${{format_currency product_plan.stripe_data "amount" "0"}} every {{product_plan.stripe_data.interval_count}} {{product_plan.stripe_data.interval_count}}</p>
-          <p>${{format_currency product_plan.stripe_data "amount" "0"}} every {{product_plan.stripe_data.interval}} {{#if product_plan.stripe_data.trial_period_days}}<span>({{product_plan.stripe_data.trial_period_days}}-day trial)</span>{{/if}}</p>
+          <p>{{product_plan.name}} - ${{format_currency product_plan.stripe_data "amount" "0"}} every {{product_plan.stripe_data.interval_count}} {{product_plan.stripe_data.interval}}s</p>
+          <p>${{format_currency product_plan.stripe_data "amount" "0"}} every {{product_plan.stripe_data.interval_count}} {{product_plan.stripe_data.interval}}s {{#if product_plan.stripe_data.trial_period_days}}<span>({{product_plan.stripe_data.trial_period_days}}-day trial)</span>{{/if}}</p>
           <div>
             <label for="misc-data-example">Check to have items chopped</label>
             <input id="misc-data-example" type="checkbox" name="chopped">
@@ -21,6 +21,7 @@
               data-name="{{product_plan.name}}"
               data-id="{{product_plan.id}}"
               data-interval={{product_plan.stripe_data.interval}}
+              data-interval-count={{product_plan.stripe_data.interval_count}}
               data-price="{{product_plan.stripe_data.amount}}"
               data-has-no-shipments="{{fields.has_no_shipments}}"
               data-trial-days="{{product_plan.stripe_data.trial_period_days}}"

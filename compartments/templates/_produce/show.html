@@ -56,6 +56,7 @@
                 data-id="{{id}}"
                 data-misc-data-chopped="false"
                 data-price="{{#if on_sale}}{{sale_price.usd}}{{else}}{{price.usd}}{{/if}}"
+                data-has-shipments="{{../has_shipments}}"
               >
                 <span>Add to Cart</span>
               </button>
@@ -70,6 +71,7 @@
                 data-misc-data-chopped="false"
                 data-price="{{#if on_sale}}{{sale_price.usd}}{{else}}{{price.usd}}{{/if}}"
                 disabled=""
+                data-has-shipments="{{../has_shipments}}"
               >
                 <span>Add to Cart</span>
               </button>
